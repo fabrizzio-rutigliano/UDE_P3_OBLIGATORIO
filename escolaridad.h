@@ -24,7 +24,7 @@ bool EsVacia(Escolaridad e);
 
 // Devuelve el primer elemento de la secuencia. 
 // Precondición: la secuencia no es vacía. 
-curso Primero(Escolaridad e);
+Curso Primero(Escolaridad e);
 
 // Devuelve la secuencia sin su primer elemento. 
 // Precondición: la secuencia no es vacía 
@@ -35,4 +35,4 @@ int Largo(Escolaridad e);
 
 // Devuelve el elemento que ocupa la posición K de la secuencia.
 // Precondición: El largo de la secuencia es mayor o igual a K. 
-curso Kesimo(Escolaridad e, int k);
+Curso Kesimo(Escolaridad e, int k);

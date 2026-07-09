@@ -25,7 +25,7 @@ bool Member();
 
 //Precondición: el elemento a insertar no es miembro del diccionario.
 //Inserta un elemento en el diccionario.
-void Insert(%Alumnos as, Alumno al);
+void Insert(Alumnos &as, Alumno al);
 
 
 
@@ -37,7 +37,7 @@ Alumno Find(Alumnos as, int ci);
 
 //Sustituye el viejo elemento de tipo T en el diccionario por el nuevo elemento.
 //Precondición: el elemento a sustituir es miembro del diccionario.
-void Modify(Alumnos &as, Alumno al) : Diccionario x T  Diccionario
+void Modify(Alumnos &as, Alumno al);
 
 
 

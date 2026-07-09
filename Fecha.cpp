@@ -32,10 +32,10 @@ int darAnio(Fecha fecha)
 }
 
 // Validez de la fecha ingresada
-Boolean esValidaFecha(Fecha fecha)
+bool esValidaFecha(Fecha fecha)
 {
 
-    Boolean check = FALSE;
+    bool check = false;
 
     // validamos rango de dias por mes
     switch(fecha.mes)
@@ -48,65 +48,65 @@ Boolean esValidaFecha(Fecha fecha)
     case 10:
     case 12:
         if (fecha.dia >= 1 && fecha.dia <= 31)
-            check = TRUE;
+            check = true;
         else
-            check = FALSE;
+            check = false;
         break;
     case 4:
     case 6:
     case 9:
     case 11:
         if (fecha.dia >= 1 && fecha.dia <= 30)
-            check = TRUE;
+            check = true;
         else
-            check = FALSE;
+            check = false;
         break;
     case 2:// validamos que el a�o sea biciesto
         if (fecha.anio % 4 == 0)
         {
             if (fecha.dia >= 1 && fecha.dia <= 29)
-                check = TRUE;
+                check = true;
             else
-                check = FALSE;
+                check = false;
         }
         else
         {
             if (fecha.dia  >= 1 && fecha.dia  <= 28)
-                check = TRUE;
+                check = true;
             else
-                check = FALSE;
+                check = false;
         }
         break;
     default:
-        check = FALSE;
+        check = false;
     }
 
     return check;
 
 }
 
-Boolean esMayorFechas(Fecha a, Fecha b)
+bool esMayorFechas(Fecha a, Fecha b)
 {
-    Boolean check = FALSE;
+    bool check = false;
 
     if (darAnio(a) > darAnio(b))
-        check = TRUE;
+        check = true;
     else if ((darAnio(a) == darAnio(b)) && (darMes(a)  > darMes(b)))
-        check = TRUE;
+        check = true;
     else if ((darAnio(a) == darAnio(b)) && (darMes(a) == darMes(b)) && (darDia(a) > darDia(b)))
-        check = TRUE;
+        check = true;
 
     return check;
 }
 
-Boolean sonIgualesFechas(Fecha a, Fecha b)
+bool sonIgualesFechas(Fecha a, Fecha b)
 {
 
     if((darAnio(a) == darAnio(b)) && (darMes(a) == darMes(b)) && (darDia(a) == darDia(b)) )
     {
-        return TRUE;
+        return true;
     }
-    return FALSE;
+    return false;
 }
 
 // Copia una fecha en otra fecha

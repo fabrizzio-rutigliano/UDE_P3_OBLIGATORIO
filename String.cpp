@@ -61,18 +61,18 @@ void strPrint(String s)
     }
 }
 
-Boolean strEq(String s1, String s2)
+bool strEq(String s1, String s2)
 {
     int i = 0;
-    Boolean iguales = TRUE;
+    bool iguales = true;
     while (iguales && (s1[i] != '\0') && (s2[i] != '\0'))
     {
         if (s1[i] != s2[i])
-            iguales = FALSE;
+            iguales = false;
         i++;
     }
     if ((s1[i] != '\0') || (s2[i] != '\0'))
-        iguales = FALSE;
+        iguales = false;
     return iguales;
 }
 
@@ -112,10 +112,10 @@ void Levantar_String (String &s, FILE * f){
 // ---------- Funciones / Procedimientos Específicos ------------
 
 //Valida si el string s es vacio
-Boolean strEsVacio(String s){
-    Boolean result = FALSE;
+bool strEsVacio(String s){
+    bool result = false;
     if (strLar(s) == 0 && s[0] == '\0'){
-        result = TRUE;
+        result = true;
     }
     return result;
 }
@@ -126,10 +126,10 @@ int strStringToInt(String s)
 {
     int i = 0;
     int result = 0;
-    Boolean negativo = FALSE;
+    bool negativo = false;
 
     if (s[0] == '-'){
-        negativo = TRUE;
+        negativo = true;
         i = 1;
     }
 
@@ -138,7 +138,7 @@ int strStringToInt(String s)
         i++;
     }
 
-    if (negativo == TRUE)
+    if (negativo == true)
         result = -result;
 
     return result;
@@ -152,58 +152,58 @@ char strStrToChar(String s){
 }
 
 // Auxiliar para evaluar si es numerico.
-Boolean strEsDigito(char c) {
+bool strEsDigito(char c) {
     
-    Boolean check = FALSE;
+    bool check = false;
     if (c >= '0' && c <= '9')
-        check = TRUE;
+        check = true;
     
     return check;
 }
 
 // Auxiliar para evaluar caracter.
-Boolean strEsLetra(char c) {
-    Boolean check = FALSE;
+bool strEsLetra(char c) {
+    bool check = false;
     if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-        check = TRUE;
+        check = true;
 
     return check;
 }
 
 // Auxiliar para evaluar espacio en blanco.
-Boolean strEsEspacioBlanco(char c) {
-    Boolean check = FALSE;
+bool strEsEspacioBlanco(char c) {
+    bool check = false;
     if (c == ' ') //|| c == '\t' || c == '\n'
-        check = TRUE;
+        check = true;
     return check;
 }
 
 // Devuelve si s1 representa a un entero
-Boolean strEsEntero(String s1) {
+bool strEsEntero(String s1) {
     
-    Boolean check = TRUE;
+    bool check = true;
     int i = 0;
 
     // Si es NULL no es entero
     if (s1 == NULL)
-        check = FALSE;
+        check = false;
     // Si viene salto de str tampoco
     if (check && s1[0] == '\0')
-        check = FALSE;
+        check = false;
     // Evaluamos si es negativo
     if (check && (s1[i] == '-')) {
         i++;
 
         // Si luego del signo viene termino str no es válido.
         if (s1[i] == '\0')
-            check = FALSE;
+            check = false;
         // Dejamos el i posicionado en el segundo caracter.
     }
 
     // Todos los restantes deben ser dígitos
     while (check && s1[i] != '\0') {
-        if (strEsDigito(s1[i]) == FALSE)
-            check = FALSE;
+        if (strEsDigito(s1[i]) == false)
+            check = false;
         i++;
     }
 
@@ -212,22 +212,22 @@ Boolean strEsEntero(String s1) {
 
 // Devuelve si s1 representa a un entero positivo
 // PARA REVISAR: Positivo = Natural, o mayor estricto a 0??
-Boolean strEsEnteroPositivo(String s1){
-    Boolean check = TRUE;
+bool strEsEnteroPositivo(String s1){
+    bool check = true;
     int i = 0;
     
 
     // si es NULL no es válido
     if (s1 == NULL)
-        check = FALSE;
+        check = false;
     // Si viene salto de str tampoco
     if (check && s1[0] == '\0')
-        check = FALSE;
+        check = false;
 
     // Todos deben ser dígitos
     while (check && s1[i] != '\0') {
-        if (strEsDigito(s1[i]) == FALSE)
-            check = FALSE;
+        if (strEsDigito(s1[i]) == false)
+            check = false;
         i++;
     }
     
@@ -235,19 +235,19 @@ Boolean strEsEnteroPositivo(String s1){
 };
 
 // Devuelve si s1 representa a una cadena de caracteres alfabeticas
-Boolean strEsAlfabetico(String s1){
-    Boolean check = TRUE;
+bool strEsAlfabetico(String s1){
+    bool check = true;
     int i = 0;
 
     if (s1 == NULL)
-        check = FALSE;
+        check = false;
 
     if (check && s1[0] == '\0')
-        check = FALSE;
+        check = false;
 
     while (check && s1[i] != '\0') {
-        if (strEsLetra(s1[i]) == FALSE)
-            check = FALSE;
+        if (strEsLetra(s1[i]) == false)
+            check = false;
         i++;
     }
 
@@ -262,7 +262,7 @@ void strEliminarEspaciosInicio( String sin, String &sout){
     String aux = new char[MAX];
 
     if ((sin != NULL)) {
-        while (sin[i] != '\0' && strEsEspacioBlanco(sin[i]) == TRUE)
+        while (sin[i] != '\0' && strEsEspacioBlanco(sin[i]) == true)
             i++;
 
         while (sin[i] != '\0' && j < MAX - 1) {
@@ -280,17 +280,17 @@ void strEliminarEspaciosInicio( String sin, String &sout){
 };
 
 // Devuelve si s1 es una cadena de espacios
-Boolean strEsCadenaEnBlanco(String s1){
+bool strEsCadenaEnBlanco(String s1){
     int i = 0;
-    Boolean enBlanco = TRUE;
+    bool enBlanco = true;
 
     if(strEsVacio(s1)){
-        enBlanco = FALSE;
+        enBlanco = false;
     }
 
     while (s1[i] != '\0' && enBlanco){
         if(!strEsEspacioBlanco(s1[i])){
-            enBlanco = FALSE;
+            enBlanco = false;
         }
         i++;
     }
@@ -307,12 +307,12 @@ void strDividir(String sin, String &sout, String &sresto){
 
     if (sin != NULL) {
         // Saltear espacios blancos iniciales
-        while (sin[i] != '\0' && strEsEspacioBlanco(sin[i]) == TRUE)
+        while (sin[i] != '\0' && strEsEspacioBlanco(sin[i]) == true)
             i++;
         
         // primera palabra
         String o = new char[MAX];
-        while (sin[i] != '\0' && strEsEspacioBlanco(sin[i]) == FALSE && j < MAX - 1) {
+        while (sin[i] != '\0' && strEsEspacioBlanco(sin[i]) == false && j < MAX - 1) {
             o[j] = sin[i];
             j++;
             i++;
@@ -340,40 +340,40 @@ void strDividir(String sin, String &sout, String &sresto){
 };
 
 // Valida si s1 es la variable X
-Boolean strEsVariable(String s1){
-    Boolean check = TRUE;
+bool strEsVariable(String s1){
+    bool check = true;
     // Que no sea nulo
     if (s1 == NULL)
-        check = FALSE;
+        check = false;
     // Evalua que sea variable X
     if (check && (s1[0] != 'X' && s1[0] != 'x'))
-        check = FALSE;
+        check = false;
     // Y que termine inmediatamente luego de la variable
     if (check && s1[1] != '\0')
-        check = FALSE;
+        check = false;
 
     return check;
 };
 
 // Valida si s1 es un operador (+,-,*,/)
-Boolean strEsOperador(String s1){
-    Boolean check = TRUE;
+bool strEsOperador(String s1){
+    bool check = true;
     // Que no sea nulo
     if (s1 == NULL)
-        check = FALSE;
+        check = false;
     // Debe ser un solo caracter
     if (check && s1[1] != '\0')
-        check = FALSE;
+        check = false;
     // Evalua que sea un simbolo valido
     if (check && (s1[0] != '+' && s1[0] != '-' && s1[0] != '*' && s1[0] != '/'))
-        check = FALSE;
+        check = false;
 
     return check;
 };
 
-Boolean comandoEsValido(String str){
+bool comandoEsValido(String str){
     
-    Boolean check = FALSE;
+    bool check = false;
 
     String simple;
     strCrear(simple);
@@ -417,22 +417,22 @@ Boolean comandoEsValido(String str){
 
     if (str != NULL) {
 
-        if (strEq(str, simple) == TRUE)
-            check = TRUE;
-        else if (strEq(str, compuesta) == TRUE)
-            check = TRUE;
-        else if (strEq(str, calcular) == TRUE)
-            check = TRUE;
-        else if (strEq(str, iguales) == TRUE)
-            check = TRUE;
-        else if (strEq(str, mostrar) == TRUE)
-            check = TRUE;
-        else if (strEq(str, guardar) == TRUE)
-            check = TRUE;
-        else if (strEq(str, recuperar) == TRUE)
-            check = TRUE;
-        else if (strEq(str, salir) == TRUE)
-            check = TRUE;
+        if (strEq(str, simple) == true)
+            check = true;
+        else if (strEq(str, compuesta) == true)
+            check = true;
+        else if (strEq(str, calcular) == true)
+            check = true;
+        else if (strEq(str, iguales) == true)
+            check = true;
+        else if (strEq(str, mostrar) == true)
+            check = true;
+        else if (strEq(str, guardar) == true)
+            check = true;
+        else if (strEq(str, recuperar) == true)
+            check = true;
+        else if (strEq(str, salir) == true)
+            check = true;
     }
 
     strDestruir(simple);
