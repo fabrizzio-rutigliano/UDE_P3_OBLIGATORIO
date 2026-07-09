@@ -16,8 +16,11 @@ typedef struct {
 // Crea una secuencia vacía.  
 void Crear(Escolaridad &e);
 
-// Secuencia  Agrega un elemento de tipo T a la secuencia. 
+// Secuencia  Agrega un elemento al principio de la secuencia. 
 void InsFront(Escolaridad &e, Curso c);
+
+// Secuencia  Agrega un elemento al final de la secuencia. 
+void InsBack(Escolaridad &e, Curso c);
 
 // Boolean Determina si la secuencia está vacía o no. 
 bool EsVacia(Escolaridad e); 
@@ -36,3 +39,6 @@ int Largo(Escolaridad e);
 // Devuelve el elemento que ocupa la posición K de la secuencia.
 // Precondición: El largo de la secuencia es mayor o igual a K. 
 Curso Kesimo(Escolaridad e, int k);
+
+//determina el elemento existe en la secuencia.
+bool ExisteEnEscolaridad(Escolaridad e, int nasig);

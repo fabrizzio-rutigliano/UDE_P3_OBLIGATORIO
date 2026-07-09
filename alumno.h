@@ -23,3 +23,6 @@ String DarTelefono(Alumno al);
 
 //devuelve la escolaridad de un alumno
 Escolaridad DarEscolaridad(Alumno al);
+
+//insertar registro nuevo en escolaridad de alumno
+void InsertarEscolaridadAlu(Alumno &al, int ci, int nasig, Fecha ffin, int calif);
