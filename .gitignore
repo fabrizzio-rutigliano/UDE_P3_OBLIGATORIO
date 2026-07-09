@@ -47,3 +47,7 @@ Makefile~
 *.layout
 *.cbp.save
 *.depend.save
+
+# --- Llaves ---
+*.pub
+mackey
