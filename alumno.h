@@ -1,8 +1,9 @@
-/*typedef struct Alumno {
+#include "String.h"
+
+typedef struct Alumno {
                 	int ci;
-                	string nombre;
-                	string apellido;
-                	string telefono;
+                	String nombre;
+                	String apellido;
+                	String telefono;
                 	Escolaridad escolaridad;
 };
-*/
