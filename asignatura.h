@@ -1,1 +1,6 @@
+#ifndef ASIGNATURA_H_INCLUDED
+#define ASIGNATURA_H_INCLUDED
+
 #include "String.h"
+
+#endif// ASIGNATURA_H_INCLUDED

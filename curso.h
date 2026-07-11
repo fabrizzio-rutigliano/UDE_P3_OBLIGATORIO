@@ -1,3 +1,6 @@
+#ifndef CURSO_H_INCLUDED
+#define CURSO_H_INCLUDED
+
 #include "String.h"
 #include "Fecha.h"
 
@@ -6,7 +9,7 @@ typedef struct Curso {
                         String nombreAsignatura;
             	        Fecha fechaFin; 
                         int calificacion;
-                    };
+                    } Curso;
 
 int DevolverNumero(Curso c);
 
@@ -27,3 +30,5 @@ void DesplegarCalificacion(Curso c);
 Curso CargarCurso(int nro, String nom, Fecha ffin, int cal); 
 
 void IngresarCurso(Curso &c); // Usamos esto como auxiliar para pasarlo dentro de cargar curso.
+
+#endif// CURSO_H_INCLUDED

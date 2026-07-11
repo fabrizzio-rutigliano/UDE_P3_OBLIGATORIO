@@ -1,3 +1,6 @@
+#ifndef ALUMNO_H_INCLUDED
+#define ALUMNO_H_INCLUDED
+
 #include "escolaridad.h"
 
 typedef struct Alumno {
@@ -6,7 +9,7 @@ typedef struct Alumno {
                 	String apellido;
                 	String telefono;
                 	Escolaridad escolaridad;
-};
+} Alumno;
 
 
 //devuelve la CI de un alumno
@@ -26,3 +29,5 @@ Escolaridad DarEscolaridad(Alumno al);
 
 //insertar registro nuevo en escolaridad de alumno
 void InsertarEscolaridadAlu(Alumno &al, int ci, int nasig, Fecha ffin, int calif);
+
+#endif// ALUMNO_H_INCLUDED

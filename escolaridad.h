@@ -1,9 +1,12 @@
+#ifndef ESCOLARIDAD_H_INCLUDED
+#define ESCOLARIDAD_H_INCLUDED
+
 #include "curso.h"
 
 typedef struct nodoCurso {
             	            Curso info;
             	            nodoCurso * sig;
-                        };
+                        } nodoCurso;
 
 typedef struct {
                 nodoCurso * prim;
@@ -42,3 +45,5 @@ Curso Kesimo(Escolaridad e, int k);
 
 //determina el elemento existe en la secuencia.
 bool ExisteEnEscolaridad(Escolaridad e, int nasig);
+
+#endif// ESCOLARIDAD_H_INCLUDED

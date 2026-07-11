@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "stdio.h"
 /*
 
 Fecha String arreglar boolean, y limpiar no utilizables (Gus)
@@ -11,3 +12,9 @@ Curricula Fabri
 Constantes GP
 
 */
+
+int main() {
+
+    printf("BIENVENIDO OBLIGATORIO PROG 3!!!");
+    return 0;
+}

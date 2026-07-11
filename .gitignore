@@ -1,5 +1,6 @@
 # ---- Carpetas de VS Code ----
 .vscode/
+.DS_Store
 
 # ---- Archivos de datos ----
 *.txt

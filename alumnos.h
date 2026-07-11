@@ -1,15 +1,18 @@
+#ifndef ALUMNOS_H_INCLUDED
+#define ALUMNOS_H_INCLUDED
+
 #include "constantes.h"
 #include "alumno.h"
 
 
 typedef struct nodoAlumno {
-                            			Alumno info;
-                            			nodoAlumno * sig;
-};
+						Alumno info;
+            			nodoAlumno * sig;
+} nodoAlumno;
 
 typedef nodoAlumno * ListaAlumnos;
 
-typedef ListaAlumnos Alumnos[B];
+typedef ListaAlumnos Alumnos[MAX_ALU];
 
 
 
@@ -44,3 +47,5 @@ void Modify(Alumnos &as, Alumno al);
 //Dada la clave de un elemento lo borra del diccionario
 //Precondición: el elemento es miembro del diccionario.
 void Delete(Alumnos &as, int ci);
+
+#endif// ALUMNOS_H_INCLUDED
