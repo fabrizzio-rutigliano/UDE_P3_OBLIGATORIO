@@ -2,12 +2,12 @@
 #include "stdio.h"
 /*
 
-Fecha String arreglar boolean, y limpiar no utilizables (Gus)
+Fecha String arreglar boolean, y limpiar no utilizables (Gus) Done!
 
 Alumno  GP
 Alumnos GP
-Asignatura Gus
-Asignaturas Gus
+Asignatura Gus Done!
+Asignaturas Gus Done!
 Curricula Fabri
 Constantes GP
 
