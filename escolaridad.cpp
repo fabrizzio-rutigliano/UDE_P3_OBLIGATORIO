@@ -21,13 +21,20 @@ void InsFront(Escolaridad &e, Curso c)
 // Secuencia  Agrega un elemento al final de la secuencia. 
 void InsBack(Escolaridad &e, Curso c)
 {
-
+    nodoCurso *aux = new nodoCurso;
+    aux->info = c;
+    aux->sig = NULL;
+    e.ult->sig = aux;
+    e.ult = aux;
 }
 
 // Boolean Determina si la secuencia está vacía o no. 
 bool EsVacia(Escolaridad e)
 {
-
+    bool vacio = false;
+    if(e.prim == NULL)
+        vacio = true;
+    return vacio;
 }
 
 
@@ -35,7 +42,7 @@ bool EsVacia(Escolaridad e)
 // Precondición: la secuencia no es vacía. 
 Curso Primero(Escolaridad e)
 {
-
+    return e.prim->info;
 }
 
 // Devuelve la secuencia sin su primer elemento. 
