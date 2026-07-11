@@ -10,27 +10,21 @@ int DarCi(Alumno al)
 }
 
 //devuelve el nombre de un Alumno
-String DarNombre(Alumno al)
+void DarNombre(Alumno al, String &nom)
 {
-    String nom;
     strCop(nom, al.nombre);
-    return nom;
 }
 
 //devuelve el apellido de un Alumno
-String DarApellido(Alumno al)
+void DarApellido(Alumno al, String &ape)
 {
-    String ape;
     strCop(ape, al.apellido);
-    return ape;
 }
 
 //devuelve el telefono de un Alumno
-String DarTelefono(Alumno al)
+void DarTelefono(Alumno al, String &tel)
 {
-    String tel;
     strCop(tel, al.telefono);
-    return tel;
 }
 
 //devuelve la escolaridad de un alumno

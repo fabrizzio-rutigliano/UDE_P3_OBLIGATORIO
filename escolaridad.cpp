@@ -49,24 +49,50 @@ Curso Primero(Escolaridad e)
 // Precondición: la secuencia no es vacía 
 void Resto(Escolaridad inicial, Escolaridad &final)
 {
-
+    final.prim = inicial.prim->sig;
+    final.ult = inicial.ult;
 }
 
 // Devuelve la cantidad de elementos de la secuencia.
 int Largo(Escolaridad e)
 {
-
+    int i=0;
+    nodoCurso *aux = new nodoCurso;
+    aux = e.prim;
+    while(aux != NULL)
+    {
+        aux = aux->sig;
+        i++;
+    }
+    return i;
 }
 
 // Devuelve el elemento que ocupa la posición K de la secuencia.
 // Precondición: El largo de la secuencia es mayor o igual a K. 
 Curso Kesimo(Escolaridad e, int k)
 {
-
+    int i;
+    nodoCurso *aux = new nodoCurso;
+    aux = e.prim;
+    for(i=1; i<k; i++)
+    {
+        aux = aux->sig;
+    }
+    return aux->info;
 }
 
 //determina el elemento existe en la secuencia.
 bool ExisteEnEscolaridad(Escolaridad e, int nasig)
 {
-
+    bool existe = false;
+    nodoCurso *aux = new nodoCurso;
+    aux = e.prim;
+    while(aux != NULL && !existe)
+    {
+        if(aux->info.numero == nasig)
+            existe = true;
+        else
+            aux = aux->sig;
+    }
+    return existe;
 }

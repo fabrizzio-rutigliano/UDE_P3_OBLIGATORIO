@@ -16,7 +16,7 @@ typedef struct Alumno {
 int DarCi(Alumno al);
 
 //devuelve el nombre de un Alumno
-String DarNombre(Alumno al);
+void DarNombre(Alumno al, String &nom);
 
 //devuelve el apellido de un Alumno
 String DarApellido(Alumno al);
