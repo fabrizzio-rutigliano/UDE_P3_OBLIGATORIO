@@ -17,12 +17,12 @@ typedef ListaAlumnos Alumnos[MAX_ALU];
 
 
 //Crea un diccionario vacío.
-void Make();
+void Make(Alumnos &als);
 
 
 
 //Determina si en el diccionario existe un elemento con la clave especificada.
-bool Member();
+bool Member(Alumnos als, int ci);
 
 
 

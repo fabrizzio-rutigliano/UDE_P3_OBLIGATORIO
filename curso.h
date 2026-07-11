@@ -6,7 +6,6 @@
 
 typedef struct Curso {
                         int numero;
-                        String nombreAsignatura;
             	        Fecha fechaFin; 
                         int calificacion;
                     } Curso;
@@ -27,7 +26,7 @@ void DesplegarFechaFin(Curso c);
 
 void DesplegarCalificacion(Curso c);
 
-Curso CargarCurso(int nro, String nom, Fecha ffin, int cal); 
+Curso CargarCurso(int nro, Fecha ffin, int cal); 
 
 void IngresarCurso(Curso &c); // Usamos esto como auxiliar para pasarlo dentro de cargar curso.
 

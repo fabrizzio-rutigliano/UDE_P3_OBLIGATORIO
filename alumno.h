@@ -27,7 +27,12 @@ String DarTelefono(Alumno al);
 //devuelve la escolaridad de un alumno
 Escolaridad DarEscolaridad(Alumno al);
 
+
+//verifica si la asignatura existe en la escolaridad del alumno
+bool ExisteEnEscolaridadAlumno(Alumno al, int nasig);
+
+
 //insertar registro nuevo en escolaridad de alumno
-void InsertarEscolaridadAlu(Alumno &al, int ci, int nasig, Fecha ffin, int calif);
+void InsertarEscolaridadAlu(Alumno &al, int nasig, Fecha ffin, int calif);
 
 #endif// ALUMNO_H_INCLUDED

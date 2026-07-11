@@ -46,4 +46,5 @@ Curso Kesimo(Escolaridad e, int k);
 //determina el elemento existe en la secuencia.
 bool ExisteEnEscolaridad(Escolaridad e, int nasig);
 
+
 #endif// ESCOLARIDAD_H_INCLUDED
