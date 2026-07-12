@@ -14,6 +14,8 @@ void InsFront(Escolaridad &e, Curso c)
     nodoCurso *aux = new nodoCurso;
     aux->info = c;
     aux->sig = e.prim;
+    if(e.prim == NULL)
+        e.ult = aux;
     e.prim = aux;
 
 }
@@ -24,7 +26,10 @@ void InsBack(Escolaridad &e, Curso c)
     nodoCurso *aux = new nodoCurso;
     aux->info = c;
     aux->sig = NULL;
-    e.ult->sig = aux;
+    if(e.ult == NULL)
+        e.prim = aux;
+    else 
+        e.ult->sig = aux;
     e.ult = aux;
 }
 
