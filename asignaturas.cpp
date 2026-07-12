@@ -20,3 +20,12 @@ bool esVacia(Asignaturas asigns){
         vacia = true;
     return vacia;
 }
+
+//libera memoria de todas las asignaturas
+void destruirAsignaturas(Asignaturas &asigns){
+    for (int i = 0; i < asigns.tope; i++){
+        destruirAsignatura(asigns.arre[i]);
+    }
+
+    asigns.tope = 0;
+}

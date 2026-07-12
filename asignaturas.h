@@ -18,4 +18,7 @@ void InsBack(Asignatura asig, Asignaturas &asigns);
 //devuelve si es vacia la curricula
 bool esVacia(Asignaturas asigns);
 
+//libera memoria de todas las asignaturas
+void destruirAsignaturas(Asignaturas &asigns);
+
 #endif// ASIGNATURAS_H_INCLUDED

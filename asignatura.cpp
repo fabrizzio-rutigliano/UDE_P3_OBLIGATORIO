@@ -34,9 +34,16 @@ Asignatura cargarAsignatura(int numero, String nombre, int cantidadHoras, bool o
     Asignatura asig;
 
     asig.numero = numero;
-    asig.nombre = nombre;
+    strCrear(asig.nombre);
+    strCop(asig.nombre, nombre);
+
     asig.cantidadHoras = cantidadHoras;
     asig.optativa = optativa;
 
     return asig;
+}
+
+// Libera la memoria utilizada por una Asignatura
+void destruirAsignatura(Asignatura &asig){
+    strDestruir(asig.nombre);
 }
