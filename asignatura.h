@@ -14,12 +14,15 @@ typedef struct Asignatura {
 int DarNumero(Asignatura asig);
 
 //devuelve el nombre de la Asignatura
-String DarNombre(Asignatura asig);
+void DarNombre(Asignatura asig, String &strNom);
 
 //devuelve el cantidadHoras de la Asignatura
 int DarCantidadHoras(Asignatura asig);
 
 //devuelve si es optativa o no la Asignatura
 bool DarOptativa (Asignatura asig);
+
+//Carga una asignatura
+Asignatura cargarAsignatura(int numero, String nombre, int cantidadHoras, bool optativa);
 
 #endif// ASIGNATURA_H_INCLUDED

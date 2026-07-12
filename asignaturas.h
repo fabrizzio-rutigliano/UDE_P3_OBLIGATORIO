@@ -13,7 +13,7 @@ typedef struct Asignaturas {
 void Crear(Asignaturas &asigns);
 
 //Agrega una asignatura a la Curricula
-void AgregarAsignatura(Asignatura asig, Asignaturas &asigns);
+void InsBack(Asignatura asig, Asignaturas &asigns);
 
 //devuelve si es vacia la curricula
 bool esVacia(Asignaturas asigns);
