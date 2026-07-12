@@ -103,7 +103,7 @@ void Delete(Alumnos &as, int ci)
         aux = aux->sig;
     }
     if(ant == NULL)
-        as[cubeta] = NULL;
+        as[cubeta] = aux->sig;
     else
         ant->sig = aux->sig;
     delete(aux);
