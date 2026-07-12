@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 
 #include "testAsignatura.h"
 #include "asignatura.h"
@@ -128,3 +128,5 @@ void ejecutarTestAsignatura(){
 
     printf("=================================\n\n");
 }
+
+*/

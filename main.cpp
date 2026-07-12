@@ -1,10 +1,9 @@
 #include "menu.h"
-#include "stdio.h"
-#include "testEscolaridad.h"
-#include "testAsignatura.h"
-#include "testAsignaturas.h"
-#include "testAlumno.h"
-#include "testAlumnos.h"
+//#include "testEscolaridad.h"
+//#include "testAsignatura.h"
+//#include "testAsignaturas.h"
+//#include "testAlumno.h"
+//#include "testAlumnos.h"
 /*
 
 Fecha String arreglar boolean, y limpiar no utilizables (Gus)9 Done!
@@ -22,20 +21,27 @@ Menu Gus
 int main() {
 
     int opcion;
+    Asignaturas asigns;
+
+
+
+    Crear(asigns);
+
     //testEscolaridad();
     //testEscolaridad();
     //testAlumno();
     //testAlumnos();
     //ejecutarTestAsignatura();
-    ejecutarTestAsignaturas();
+    //ejecutarTestAsignaturas();
 
-    /*do
+    do
     {
         desplegarMenuPrincipal(opcion);
         switch (opcion)
         {
         case 1:
-            printf("Selecciono registrar nueva asignatura");
+            printf("\nSelecciono registrar nueva asignatura\n");
+            AgregarAsignaturaEnAsignaturas(asigns);
             break;
         case 2:
             printf("Selecciono agregar previatura");
@@ -66,6 +72,9 @@ int main() {
         }
 
     }
-    while(opcion!=9);*/
+    while(opcion!=9);
+
+
+    destruirAsignaturas(asigns);
     return 0;
 }

@@ -43,6 +43,22 @@ Asignatura cargarAsignatura(int numero, String nombre, int cantidadHoras, bool o
     return asig;
 }
 
+//Ingresa una asignatura desde teclado
+void IngresarAsignatura(Asignatura &a, int num)
+{
+    int auxOpt;
+    a.numero = num;
+    printf("\nIngrese el nombre de la asignatura... ");
+    strCrear(a.nombre);
+    strScan(a.nombre);
+    printf("\nIngrese la cantidad de horas de la asignatura... ");
+    scanf("%d",&a.cantidadHoras);
+    printf("\nLa asignatura es optativa?(1 - Si / 0 - No)... ");
+    scanf("%d", &auxOpt);
+    bool optativa = (auxOpt != 0);
+    a.optativa = optativa;
+}
+
 // Libera la memoria utilizada por una Asignatura
 void destruirAsignatura(Asignatura &asig){
     strDestruir(asig.nombre);

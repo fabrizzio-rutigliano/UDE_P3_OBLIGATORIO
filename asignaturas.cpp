@@ -29,3 +29,15 @@ void destruirAsignaturas(Asignaturas &asigns){
 
     asigns.tope = 0;
 }
+
+//agrega nueva asignatura despues de hacer los controles necesarios
+void AgregarAsignaturaEnAsignaturas(Asignaturas &asigns){
+    if(asigns.tope < 30)
+    {
+        int num = asigns.tope;
+        asigns.tope++;
+        IngresarAsignatura(asigns.arre[num], num);
+    }
+    else
+        printf("\nError"); //desplegar mensaje de error
+}

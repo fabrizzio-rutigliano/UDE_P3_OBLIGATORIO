@@ -25,6 +25,9 @@ bool DarOptativa (Asignatura asig);
 //Carga una asignatura
 Asignatura cargarAsignatura(int numero, String nombre, int cantidadHoras, bool optativa);
 
+//Ingresa una asignatura desde teclado
+void IngresarAsignatura(Asignatura &a, int num);
+
 // Libera la memoria utilizada por una Asignatura
 void destruirAsignatura(Asignatura &asig);
 

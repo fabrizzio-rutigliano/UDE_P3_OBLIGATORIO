@@ -21,4 +21,7 @@ bool esVacia(Asignaturas asigns);
 //libera memoria de todas las asignaturas
 void destruirAsignaturas(Asignaturas &asigns);
 
+//agrega nueva asignatura despues de hacer los controles necesarios
+void AgregarAsignaturaEnAsignaturas(Asignaturas &asigns);
+
 #endif// ASIGNATURAS_H_INCLUDED
