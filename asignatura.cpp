@@ -9,11 +9,8 @@ int DarNumero(Asignatura asig){
 }
 
 //devuelve el nombre de la Asignatura
-String DarNombre(Asignatura asig){
-    String nom;
-    nom = asig.nombre;
-
-    return nom;
+void DarNombre(Asignatura asig, String &strNom){
+    strCop(strNom, asig.nombre);
 }
 
 //devuelve el cantidadHoras de la Asignatura
@@ -30,4 +27,16 @@ bool DarOptativa (Asignatura asig){
     opt = asig.optativa;
 
     return opt;
+}
+
+//Carga una asignatura
+Asignatura cargarAsignatura(int numero, String nombre, int cantidadHoras, bool optativa){
+    Asignatura asig;
+
+    asig.numero = numero;
+    asig.nombre = nombre;
+    asig.cantidadHoras = cantidadHoras;
+    asig.optativa = optativa;
+
+    return asig;
 }

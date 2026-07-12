@@ -6,7 +6,7 @@ void Crear(Asignaturas &asigns){
 }
 
 //Agrega una asignatura a la Curricula
-void AgregarAsignatura(Asignatura asig, Asignaturas &asigns){
+void InsBack(Asignatura asig, Asignaturas &asigns){
     if(asigns.tope < MAX_ASIG){
         asigns.arre[asigns.tope] = asig;
         asigns.tope++;
