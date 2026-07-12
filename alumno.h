@@ -16,18 +16,23 @@ typedef struct Alumno {
 int DarCi(Alumno al);
 
 //devuelve el nombre de un Alumno
-String DarNombre(Alumno al);
+void DarNombre(Alumno al, String &nom);
 
 //devuelve el apellido de un Alumno
-String DarApellido(Alumno al);
+void DarApellido(Alumno al, String &ape);
 
 //devuelve el telefono de un Alumno
-String DarTelefono(Alumno al);
+void DarTelefono(Alumno al, String &tel);
 
 //devuelve la escolaridad de un alumno
 Escolaridad DarEscolaridad(Alumno al);
 
+
+//verifica si la asignatura existe en la escolaridad del alumno
+bool ExisteEnEscolaridadAlumno(Alumno al, int nasig);
+
+
 //insertar registro nuevo en escolaridad de alumno
-void InsertarEscolaridadAlu(Alumno &al, int ci, int nasig, Fecha ffin, int calif);
+void InsertarEscolaridadAlu(Alumno &al, int nasig, Fecha ffin, int calif);
 
 #endif// ALUMNO_H_INCLUDED
