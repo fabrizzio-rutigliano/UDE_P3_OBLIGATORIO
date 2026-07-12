@@ -19,10 +19,10 @@ int DarCi(Alumno al);
 void DarNombre(Alumno al, String &nom);
 
 //devuelve el apellido de un Alumno
-String DarApellido(Alumno al);
+void DarApellido(Alumno al, String &ape);
 
 //devuelve el telefono de un Alumno
-String DarTelefono(Alumno al);
+void DarTelefono(Alumno al, String &tel);
 
 //devuelve la escolaridad de un alumno
 Escolaridad DarEscolaridad(Alumno al);

@@ -14,7 +14,8 @@ typedef nodoAlumno * ListaAlumnos;
 
 typedef ListaAlumnos Alumnos[MAX_ALU];
 
-
+//funcion auxiliar para dispersion
+int h(int ci);
 
 //Crea un diccionario vacío.
 void Make(Alumnos &als);
