@@ -3,6 +3,8 @@
 #include "testEscolaridad.h"
 #include "testAsignatura.h"
 #include "testAsignaturas.h"
+#include "testAlumno.h"
+#include "testAlumnos.h"
 /*
 
 Fecha String arreglar boolean, y limpiar no utilizables (Gus)9 Done!
@@ -21,6 +23,9 @@ int main() {
 
     int opcion;
     //testEscolaridad();
+    //testEscolaridad();
+    //testAlumno();
+    //testAlumnos();
     //ejecutarTestAsignatura();
     ejecutarTestAsignaturas();
 
@@ -62,6 +67,5 @@ int main() {
 
     }
     while(opcion!=9);*/
-
     return 0;
 }
