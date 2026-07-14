@@ -1,5 +1,19 @@
 #include "alumno.h"
 
+//inicializar alumno
+void CargarAlumno(Alumno &a)
+{
+    int ci; 
+    String nom, ap, tel; 
+    Escolaridad escolaridad;
+    strCrear(a.nombre);
+    strCop(a.nombre, nom);
+    strCrear(a.apellido);
+    strCop(a.apellido, ap);
+    strCrear(a.telefono);
+    strCop(a.telefono, tel);
+    Crear(a.escolaridad);
+}
 
 //devuelve la CI de un alumno
 int DarCi(Alumno al)

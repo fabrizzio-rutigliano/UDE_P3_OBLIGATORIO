@@ -4,14 +4,10 @@
 #include "String.h"
 
 typedef struct Asignatura {
-                int numero;
                 String nombre;
                 int cantidadHoras;
                 bool optativa;
 } Asignatura;
-
-//devuelve el numero de la Asignatura
-int DarNumero(Asignatura asig);
 
 //devuelve el nombre de la Asignatura
 void DarNombre(Asignatura asig, String &strNom);
@@ -23,10 +19,10 @@ int DarCantidadHoras(Asignatura asig);
 bool DarOptativa (Asignatura asig);
 
 //Carga una asignatura
-Asignatura cargarAsignatura(int numero, String nombre, int cantidadHoras, bool optativa);
+Asignatura cargarAsignatura(String nombre, int cantidadHoras, bool optativa);
 
 //Ingresa una asignatura desde teclado
-void IngresarAsignatura(Asignatura &a, int num);
+void IngresarAsignatura(Asignatura &a);
 
 // Libera la memoria utilizada por una Asignatura
 void destruirAsignatura(Asignatura &asig);

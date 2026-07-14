@@ -20,12 +20,8 @@ int h(int ci);
 //Crea un diccionario vacío.
 void Make(Alumnos &als);
 
-
-
 //Determina si en el diccionario existe un elemento con la clave especificada.
 bool Member(Alumnos als, int ci);
-
-
 
 //Precondición: el elemento a insertar no es miembro del diccionario.
 //Inserta un elemento en el diccionario.

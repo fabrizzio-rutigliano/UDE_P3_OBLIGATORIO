@@ -24,4 +24,7 @@ void destruirAsignaturas(Asignaturas &asigns);
 //agrega nueva asignatura despues de hacer los controles necesarios
 void AgregarAsignaturaEnAsignaturas(Asignaturas &asigns);
 
+// Retornar el tope de asignatura
+int TopeActualAsignaturas(Asignaturas asigns);
+
 #endif// ASIGNATURAS_H_INCLUDED

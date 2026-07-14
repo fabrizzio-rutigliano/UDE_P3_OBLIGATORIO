@@ -41,3 +41,8 @@ void AgregarAsignaturaEnAsignaturas(Asignaturas &asigns){
     else
         printf("\nError"); //desplegar mensaje de error
 }
+
+// Retornar el tope de asignatura
+int TopeActualAsignaturas(Asignaturas asigns){
+    return asigns.tope;
+}

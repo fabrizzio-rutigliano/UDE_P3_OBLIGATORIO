@@ -2,7 +2,7 @@
 #include "constantes.h"
 
 // Crea un grafo vacío (Inicializa toda la matriz de adyacencia en 0).
-void Crear(MatrizPreviaturas &matriz){
+void Crear(Curricula &matriz){
     for(int i = 0; i < MAX_ASIG; i++){
         for(int j = 0; j < MAX_ASIG; j++){
             matriz[i][j] = 0;
@@ -12,7 +12,7 @@ void Crear(MatrizPreviaturas &matriz){
 
 // Determina si en el grafo existe la arista especificada. 
 // *(La materia previa es la fila y la asignatura a cursar es la columna.)
-bool PerteneceArista(MatrizPreviaturas matriz, int previa, int asignatura){
+bool PerteneceArista(Curricula matriz, int previa, int asignatura){
 
     if (matriz[previa][asignatura] == 1) {
         return true;
@@ -23,14 +23,13 @@ bool PerteneceArista(MatrizPreviaturas matriz, int previa, int asignatura){
 
 // Inserta la nueva arista al grafo.
 // Precondición: la arista no pertenece al grafo. 
-void InsertarArista(MatrizPreviaturas &matriz, int previa, int asignatura){
+void InsertarArista(Curricula &matriz, int previa, int asignatura){
 
     matriz[previa][asignatura] = 1;
 }
 
 // Determina si en el grafo existe el vertice especificado.
-// *A discutir* se valida usando el tope del ACT de asignaturas.
-bool PerteneceVertice(MatrizPreviaturas matriz, int asignatura, int topeActual){
+bool PerteneceVertice(Curricula matriz, int asignatura, int topeActual){
     if((asignatura >= 0) && (asignatura < topeActual)){
         return true;
     } else {
@@ -47,7 +46,7 @@ bool PerteneceVertice(MatrizPreviaturas matriz, int asignatura, int topeActual){
 // Antes de insertar la arista, lanzamos una DFS empezando desde el vértice asignatura. 
 // Si mediante esa búsqueda logramos visitar el vértice de la previa, significa que agregar la conexión formaría un ciclo.
 
-void DFS_BuscarCamino(MatrizPreviaturas matriz, int actual, int destino, bool visitado[], int topeActual) {
+void DFS_BuscarCamino(Curricula matriz, int actual, int destino, bool visitado[], int topeActual) {
     // Marcamos el vértice actual como visitado
     visitado[actual] = true;
     
@@ -67,7 +66,7 @@ void DFS_BuscarCamino(MatrizPreviaturas matriz, int actual, int destino, bool vi
     }
 }
 
-bool GeneraCiclo(MatrizPreviaturas matriz, int previa, int asignatura, int topeActual) {
+bool GeneraCiclo(Curricula matriz, int previa, int asignatura, int topeActual) {
     
     // Inicializamos el arreglo de visitados en false
     bool visitado[MAX_ASIG];
@@ -88,7 +87,7 @@ bool GeneraCiclo(MatrizPreviaturas matriz, int previa, int asignatura, int topeA
 // En este modulo solo podemos listar numeros de materias, por lo tanto le tenemos que pasar
 // un arreglo de numeros de materia para que se procese utilizando asignaturas para acceder a los nombres.
 
-void DFS_BuscarPrevias(MatrizPreviaturas matriz, int actual, bool visitado[], int topeActual, int resultado[], int &topeResultado) {
+void DFS_BuscarPrevias(Curricula matriz, int actual, bool visitado[], int topeActual, int resultado[], int &topeResultado) {
     // Marcamos el vértice actual como visitado para no procesarlo dos veces
     visitado[actual] = true;
     
@@ -111,7 +110,7 @@ void DFS_BuscarPrevias(MatrizPreviaturas matriz, int actual, bool visitado[], in
     }
 }
 
-void ObtenerPrevias(MatrizPreviaturas matriz, int numAsig, int topeActual, int resultado[], int &topeResultado) {
+void ListarTodasLasPrevias(Curricula matriz, int numAsig, int topeActual, int resultado[], int &topeResultado) {
     
     // Inicializamos el arreglo de visitados en false
     bool visitado[MAX_ASIG];

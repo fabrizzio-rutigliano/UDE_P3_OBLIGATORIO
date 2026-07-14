@@ -1,13 +1,5 @@
 #include "asignatura.h"
 
-//devuelve el numero de la Asignatura
-int DarNumero(Asignatura asig){
-    int num;
-    num = asig.numero;
-
-    return num;
-}
-
 //devuelve el nombre de la Asignatura
 void DarNombre(Asignatura asig, String &strNom){
     strCop(strNom, asig.nombre);
@@ -30,10 +22,9 @@ bool DarOptativa (Asignatura asig){
 }
 
 //Carga una asignatura
-Asignatura cargarAsignatura(int numero, String nombre, int cantidadHoras, bool optativa){
+Asignatura cargarAsignatura(String nombre, int cantidadHoras, bool optativa){
     Asignatura asig;
 
-    asig.numero = numero;
     strCrear(asig.nombre);
     strCop(asig.nombre, nombre);
 
@@ -44,10 +35,9 @@ Asignatura cargarAsignatura(int numero, String nombre, int cantidadHoras, bool o
 }
 
 //Ingresa una asignatura desde teclado
-void IngresarAsignatura(Asignatura &a, int num)
+void IngresarAsignatura(Asignatura &a)
 {
     int auxOpt;
-    a.numero = num;
     printf("\nIngrese el nombre de la asignatura... ");
     strCrear(a.nombre);
     strScan(a.nombre);
