@@ -33,7 +33,7 @@ void destruirAsignaturas(Asignaturas &asigns){
 void listarAsignaturas(Asignaturas asings){
     int i;
     for(i = 0; i<asings.tope; i++){
-        DesplegarAsignatura(asings.arre[i]);
+        DesplegarAsignatura(asings.arre[i], i);
     }
 }
 
@@ -43,7 +43,7 @@ void AgregarAsignaturaEnAsignaturas(Asignaturas &asigns){
     {
         int num = asigns.tope;
         asigns.tope++;
-        IngresarAsignatura(asigns.arre[num], num);
+        IngresarAsignatura(asigns.arre[num]);
     }
     else
         printf("\nError"); //desplegar mensaje de error

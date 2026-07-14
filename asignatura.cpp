@@ -7,6 +7,7 @@ void DarNombre(Asignatura asig, String &strNom){
 
 //devuelve el nombre de la Asignatura
 void DesplegarNombre(Asignatura asig){
+    String strAux;
     strCrear(strAux);
     strCop(strAux, asig.nombre);
     strPrint(strAux);

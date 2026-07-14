@@ -1,5 +1,7 @@
 #include "alumno.h"
 
+//TODO inicializar y cargar no es lo mismo, se esta usando este metodo para
+// cargar un alumno al sistema y en realidad no tiene ningún dato, ademas detener variables no utilizadas
 //inicializar alumno
 Alumno CargarAlumno()
 {
@@ -14,6 +16,8 @@ Alumno CargarAlumno()
     strCrear(a.telefono);
     strCop(a.telefono, tel);
     CrearEscolaridad(a.escolaridad);
+
+    return a;
 }
 
 //devuelve la CI de un alumno
@@ -65,17 +69,17 @@ void InsertarEscolaridadAlu(Alumno &al, Curso cur)
 void DesplegarAlumno(Alumno al){
     printf("\nNombre: ");
     String nombreAlumno;
-    DarNombre(a, nombreAlumno);
+    DarNombre(al, nombreAlumno);
     strPrint(nombreAlumno);
 
     printf("\nApellido: ");
     String apellidoAlumno;
-    DarApellido(a, apellidoAlumno);
+    DarApellido(al, apellidoAlumno);
     strPrint(apellidoAlumno);
 
     printf("\nTeléfono: ");
     String telefonoAlumno;
-    DarTelefono(a, telefonoAlumno);
+    DarTelefono(al, telefonoAlumno);
     strPrint(telefonoAlumno);
 
     Escolaridad escolaridad;

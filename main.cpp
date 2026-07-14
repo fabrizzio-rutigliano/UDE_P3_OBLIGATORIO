@@ -23,14 +23,12 @@ Crear alumno -> Crear de escolaridad
 
 int main() {
 
-    int opcion, ci;
+    int opcion, ci, topeActual;
     Asignaturas asigns;
     Alumnos als;
     Alumno a;
     Curso cur;
     Curricula curricula;
-
-
 
     Crear(asigns);
     
@@ -49,6 +47,7 @@ int main() {
 
     do
     {
+        topeActual = 0;
         desplegarMenuPrincipal(opcion);
         switch (opcion)
         {
@@ -56,15 +55,17 @@ int main() {
             printf("\nSelecciono registrar nueva asignatura\n");
             AgregarAsignaturaEnAsignaturas(asigns);
             break;
-        case 2:
+        case 2:{
             printf("\nSelecciono agregar previatura\n");
-                int prev, requiere, topeActual;
+                int prev = 0; 
+                int requiere = 0;
                 topeActual = TopeActualAsignaturas(asigns);
                 IngresarPreviatura(prev, requiere); // Solo permite avanzar si logra insertar nros validos
                 if (!GeneraCiclo(curricula, prev, requiere, topeActual)){
                     InsertarArista(curricula, prev, requiere);
                 } else {ErrorGeneraCiclo();}
             break;
+        }
         case 3:
             printf("Selecciono inscribir nuevo alumno");
             //GP en curso
@@ -103,23 +104,34 @@ int main() {
             else
                 listarAsignaturas(asigns);
             break;
-        case 6:
+        case 6: {
             printf("\nSelecciono listar previaturas\n");
             // Fabri
-            int nroAsig, topeActual;
+            int nroAsig = 0;
             topeActual = TopeActualAsignaturas(asigns);
             int resultado[MAX_ASIG]; // Arreglo auxiliar para guardar las previas
             int topeResultado = 0;
             IngresarNroAsignatura(nroAsig); // Solo permite avanzar si logra insertar nros validos
             ListarTodasLasPrevias(curricula, nroAsig, topeActual, resultado, topeResultado);
             for(int i=0; i< topeResultado; i++){
-                printf("\nNro: &d - Asignatura: ", resultado[i]);
+                printf("\nNro: &d - Asignatura: %d", resultado[i]);
                 DesplegarNombre(asigns.arre[resultado[i]]);
                 printf("\n");
             }
             break;
+        }
         case 7:
             printf("Selecciono listar alumno por cédula");//Gus
+            printf("\ningrese la CI del alumno al que desea cargar el curso... ");
+            scanf("%d",&ci);
+            if (!Member(als, ci))
+                ErrorNoExisteAlumno();
+            else
+            {
+                a = Find(als, ci);
+                DesplegarAlumno(a);
+                printf("\n");
+            }
             break;
         case 8:
             printf("Selecciono listar escolaridad alumno");
@@ -131,7 +143,6 @@ int main() {
             printf("Opcion incorrecta!\n");
             break;
         }
-
     }
     while(opcion!=9);
 

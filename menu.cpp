@@ -33,12 +33,12 @@ void IngresarPreviatura(int prev, int requiere){
 }
 
 void AsignaturaInvalida(int asig){
-    if !(ExisteAsignatura(asig))
-    printf("Error: Asignatura ingresada no es valida...");
+    if (!ExisteAsignatura(asig))
+        printf("Error: Asignatura ingresada no es valida...");
 }
 
 void ErrorGeneraCiclo(){
-    printf("Error: La asignatura previa genera un ciclo....")
+    printf("Error: La asignatura previa genera un ciclo....");
 }
 
 // Auxiliares para requerimiento 6
