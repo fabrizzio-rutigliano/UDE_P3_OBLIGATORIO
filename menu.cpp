@@ -17,87 +17,57 @@ void desplegarMenuPrincipal(int &opcion){
     scanf("%d", &opcion);
 }
 
-/*// submenu que solicita CI
-void desplegarMenuSolicitaCi()
-{
-    printf("\nIngrese la CI: ");
+// Auxiliares para requerimiento 2
+void IngresarPreviatura(int prev, int requiere){
+    
+    do{
+        printf("\nIngrese el nro de la asignatura previa: \n");
+        scanf("%d", &prev);
+        AsignaturaInvalida(prev);
+    }while(ExisteAsignatura(prev) == false);
+
+    do{
+    printf("\nIngrese el nro de la asignatura de la que es previa: \n");
+    scanf("%d", &requiere);
+    }while(ExisteAsignatura(prev) == false);
 }
 
-// Precondicion: fecha valida
-// submenu que pide fecha
-void desplegarMenuFinalizadosFecha()
-{
-    printf("\nIngrese la fecha\n------------------------\n\n ");
+void AsignaturaInvalida(int asig){
+    if !(ExisteAsignatura(asig))
+    printf("Error: Asignatura ingresada no es valida...");
 }
 
-// submenu que pide apellido
-void desplegarMenuApellido()
-{
-    printf("\nIngrese el apellido: ");
+void ErrorGeneraCiclo(){
+    printf("Error: La asignatura previa genera un ciclo....")
 }
 
-// Muestra un valor entero en pantalla
-void desplegarInt(int a)
-{
-    printf("\n%d\n", a);
+// Auxiliares para requerimiento 6
+void IngresarNroAsignatura(int asig){
+    do{
+        printf("\nIngrese el nro de la asignatura: \n");
+        scanf("%d", &asig);
+        AsignaturaInvalida(asig);
+    }
+    while(ExisteAsignatura(asig) == false);
 }
 
-// Muestra los valores  menores, mayores e iguales para la consulta por apellidos
-void desplegarMayMenIg(int men, int may, int ig)
+
+void ErrorExisteAlumno()
 {
-    printf("\nMenores: %d", men);
-    printf("\nMayores: %d", may);
-    printf("\nIguales: %d\n", ig);
+    printf("\nError: El alumno ya esta registrado...\n ");
 }
 
-// Muestra no existencia de alumno con cedula ci
-void desplegarNoExisteAlumno(long int ci)
+void ErrorCursoYaExiste()
 {
-    printf("\nNo existe en el sistema un alumno con la cedula %ld\n", ci);
+    printf("\nERROR: El curso ya existe para este alumno...\n");
 }
 
-// Muestra la cantidad de alumnos nacidos nacidos
-void desplegarCantAlumnosNacidosEnFecha(int cant)
+void ErrorFechaCursoAnteriorAlUltimo()
 {
-    printf("\nCantidad de alumnos nacidos en la fecha seleccionada es %d\n", cant);
+    printf("\nERROR: El curso ingresado tiene fecha de fin anterior al ultimo registrado para el alumno...\n");
 }
 
-// Muestra la cantidad de registros finalizados
-void desplegarCantRegistrosFinalizados(int cant)
+void ErrorNoExisteAlumno()
 {
-    printf("\nCantidad de registros finalizados en la fecha seleccionada es %d\n", cant);
+    printf("\nERROR: El alumno no existe...\n");
 }
-
-// Muestra la no existencia de taller popular
-void desplegarNoExistenciaTallerPopular()
-{
-    printf("\nNo existe ningun taller popular\n");
-}
-
-// Muestra si encontro un archivo de alumnos
-void desplegarArchAluEncontrado()
-{
-    printf("\nArchivo de alumnos encontrado. Cargando archivo...\n");
-}
-
-// Muestra si encontro un archivo de registro
-void desplegarArchRegEncontrado()
-{
-    printf("\nArchivo de registros encontrado. Cargando archivo...\n");
-}
-// Muestra que aún no hay registros en alumnos
-void desplegarNoExisteArbolAlumno()
-{
-    printf("\nNo existen alumnos registrados. Por favor, registre un alumno para usar la consulta.\n");
-}
-
-// Muestra que la fecha ingresada es invalida
-void desplegarAdvertenciaFecha(){
-    printf("\nFecha invalida. Reintente \n");
-}
-
-// Muestra que la fecha ingresada es menor a la ultima ingresada en la lista
-void desplegarAdvertenciaFechaList(){
-    printf("\nDebe ingresar una fecha mayor o igual al ultimo registro. \n");
-}
- */

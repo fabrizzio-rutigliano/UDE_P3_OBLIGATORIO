@@ -16,9 +16,6 @@ bool PerteneceArista(Curricula matriz, int previa, int requiere);
 // Precondición: la arista no pertenece al grafo. 
 void InsertarArista(Curricula &matriz, int previa, int requiere);
 
-// Determina si en el grafo existe el vertice especificado.
-bool PerteneceVertice(Curricula matriz, int previa, int topeActual);
-
 // ==========================================
 // Operaciones especificas
 // ==========================================

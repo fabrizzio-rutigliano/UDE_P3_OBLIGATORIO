@@ -1,8 +1,9 @@
 #include "alumno.h"
 
 //inicializar alumno
-void CargarAlumno(Alumno &a)
+Alumno CargarAlumno()
 {
+    Alumno a;
     int ci; 
     String nom, ap, tel; 
     Escolaridad escolaridad;
@@ -12,7 +13,7 @@ void CargarAlumno(Alumno &a)
     strCop(a.apellido, ap);
     strCrear(a.telefono);
     strCop(a.telefono, tel);
-    Crear(a.escolaridad);
+    CrearEscolaridad(a.escolaridad);
 }
 
 //devuelve la CI de un alumno
@@ -54,8 +55,32 @@ bool ExisteEnEscolaridadAlumno(Alumno al, int nasig)
 }
 
 //insertar registro nuevo en escolaridad de alumno
-void InsertarEscolaridadAlu(Alumno &al, int nasig, Fecha ffin, int calif)
+void InsertarEscolaridadAlu(Alumno &al, Curso cur)
 {
 
-    InsBack(al.escolaridad, CargarCurso(nasig, ffin, calif));
+    InsBackEscolaridad(al.escolaridad, cur);
+}
+
+//desplegar alumno
+void DesplegarAlumno(Alumno al){
+    printf("\nNombre: ");
+    String nombreAlumno;
+    DarNombre(a, nombreAlumno);
+    strPrint(nombreAlumno);
+
+    printf("\nApellido: ");
+    String apellidoAlumno;
+    DarApellido(a, apellidoAlumno);
+    strPrint(apellidoAlumno);
+
+    printf("\nTeléfono: ");
+    String telefonoAlumno;
+    DarTelefono(a, telefonoAlumno);
+    strPrint(telefonoAlumno);
+
+    Escolaridad escolaridad;
+    escolaridad = DarEscolaridad(al);
+
+    printf("\nCantidad total de cursos: %d", LargoEscolaridad(escolaridad));
+    printf("\nCantidad de cursos aprobados: %d", CursosAprobadosEscolaridad(escolaridad));
 }

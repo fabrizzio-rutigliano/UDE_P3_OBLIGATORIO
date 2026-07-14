@@ -50,3 +50,10 @@ void IngresarCurso(Curso &c)
     printf("\nIngrese la calificacion...");
     scanf("%d",&c.calificacion);
 }
+
+bool CursoAprobado(Curso c){
+    bool aprobado = true;
+    if(c.calificacion<6)
+        aprobado = false;
+    return aprobado;
+}

@@ -21,10 +21,16 @@ bool esVacia(Asignaturas asigns);
 //libera memoria de todas las asignaturas
 void destruirAsignaturas(Asignaturas &asigns);
 
+//lista todas las asignaturas
+void listarAsignaturas(Asignaturas asings);
+
 //agrega nueva asignatura despues de hacer los controles necesarios
 void AgregarAsignaturaEnAsignaturas(Asignaturas &asigns);
 
 // Retornar el tope de asignatura
 int TopeActualAsignaturas(Asignaturas asigns);
+
+// Retorna si la asignatura existe 
+bool ExisteAsignatura(Asignaturas asigns, int asig);
 
 #endif// ASIGNATURAS_H_INCLUDED

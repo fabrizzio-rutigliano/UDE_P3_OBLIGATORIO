@@ -26,8 +26,15 @@ void destruirAsignaturas(Asignaturas &asigns){
     for (int i = 0; i < asigns.tope; i++){
         destruirAsignatura(asigns.arre[i]);
     }
-
     asigns.tope = 0;
+}
+
+//lista todas las asignaturas
+void listarAsignaturas(Asignaturas asings){
+    int i;
+    for(i = 0; i<asings.tope; i++){
+        DesplegarAsignatura(asings.arre[i]);
+    }
 }
 
 //agrega nueva asignatura despues de hacer los controles necesarios
@@ -46,3 +53,11 @@ void AgregarAsignaturaEnAsignaturas(Asignaturas &asigns){
 int TopeActualAsignaturas(Asignaturas asigns){
     return asigns.tope;
 }
+
+// Retorna si la asignatura existe 
+bool ExisteAsignatura(Asignaturas asigns, int asig){
+    if (asig < asigns.tope)
+        return true;
+    else 
+        return false;
+};

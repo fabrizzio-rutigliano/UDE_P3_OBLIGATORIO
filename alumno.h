@@ -12,7 +12,7 @@ typedef struct Alumno {
 } Alumno;
 
 //inicializar alumno
-void CargarAlumno(Alumno &a, int ci, String nom, String ap, String tel, Escolaridad escolaridad);
+Alumno CargarAlumno();
 
 //devuelve la CI de un alumno
 int DarCi(Alumno al);
@@ -33,7 +33,10 @@ Escolaridad DarEscolaridad(Alumno al);
 bool ExisteEnEscolaridadAlumno(Alumno al, int nasig);
 
 //insertar registro nuevo en escolaridad de alumno
-void InsertarEscolaridadAlu(Alumno &al, int nasig, Fecha ffin, int calif);
+void InsertarEscolaridadAlu(Alumno &al, Curso cur);
+
+//desplegar alumno
+void DesplegarAlumno(Alumno al);
 
 //TODO hay que destruir alumno
 

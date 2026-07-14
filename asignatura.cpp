@@ -5,6 +5,14 @@ void DarNombre(Asignatura asig, String &strNom){
     strCop(strNom, asig.nombre);
 }
 
+//devuelve el nombre de la Asignatura
+void DesplegarNombre(Asignatura asig){
+    strCrear(strAux);
+    strCop(strAux, asig.nombre);
+    strPrint(strAux);
+    strDestruir(strAux);
+}
+
 //devuelve el cantidadHoras de la Asignatura
 int DarCantidadHoras(Asignatura asig){
     int cantHoras;
@@ -47,6 +55,22 @@ void IngresarAsignatura(Asignatura &a)
     scanf("%d", &auxOpt);
     bool optativa = (auxOpt != 0);
     a.optativa = optativa;
+}
+
+//desplegar asignatura
+void DesplegarAsignatura(Asignatura a, int num){
+
+    printf("\nNúmero: %d", num);
+    printf("\nNombre: ");
+    String nombreAsignatura;
+    DarNombre(a, nombreAsignatura);
+    strPrint(nombreAsignatura);
+
+    printf("\nCantidad de horas: %d", DarCantidadHoras(a));
+    if(DarOptativa(a))
+        printf("\n Optativa: SI");
+    else
+        printf("\n Optativa: NO");
 }
 
 // Libera la memoria utilizada por una Asignatura

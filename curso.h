@@ -24,6 +24,8 @@ void DesplegarCalificacion(Curso c);
 
 Curso CargarCurso(int nro, Fecha ffin, int cal); 
 
-void IngresarCurso(Curso &c); 
+void IngresarCurso(Curso &c);
+
+bool CursoAprobado(Curso c);
 
 #endif// CURSO_H_INCLUDED

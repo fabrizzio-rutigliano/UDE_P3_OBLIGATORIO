@@ -12,6 +12,9 @@ typedef struct Asignatura {
 //devuelve el nombre de la Asignatura
 void DarNombre(Asignatura asig, String &strNom);
 
+// Mostrar nombre por pantalla
+void DesplegarNombre(Asignatura asig);
+
 //devuelve el cantidadHoras de la Asignatura
 int DarCantidadHoras(Asignatura asig);
 
@@ -23,6 +26,9 @@ Asignatura cargarAsignatura(String nombre, int cantidadHoras, bool optativa);
 
 //Ingresa una asignatura desde teclado
 void IngresarAsignatura(Asignatura &a);
+
+//desplegar asignatura
+void DesplegarAsignatura(Asignatura a, int num);
 
 // Libera la memoria utilizada por una Asignatura
 void destruirAsignatura(Asignatura &asig);
