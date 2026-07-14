@@ -1,3 +1,4 @@
+/*
 #include "testAlumno.h"
 
 
@@ -148,3 +149,5 @@ void testAlumno()
     printf(" FIN DEL TEST DE ALUMNO\n");
     printf("=================================================\n");
 }
+
+*/

@@ -31,7 +31,7 @@ int main() {
     Curricula curricula;
 
     Crear(asigns);
-    
+   
     //crear alumnos
     Make(als);
 
@@ -60,23 +60,26 @@ int main() {
                 int prev = 0; 
                 int requiere = 0;
                 topeActual = TopeActualAsignaturas(asigns);
-                IngresarPreviatura(prev, requiere); // Solo permite avanzar si logra insertar nros validos
+                IngresarPreviatura(asigns, prev, requiere); // Solo permite avanzar si logra insertar nros validos
                 if (!GeneraCiclo(curricula, prev, requiere, topeActual)){
                     InsertarArista(curricula, prev, requiere);
                 } else {ErrorGeneraCiclo();}
             break;
         }
         case 3:
-            printf("Selecciono inscribir nuevo alumno");
+            printf("\nSelecciono inscribir nuevo alumno\n");
             //GP en curso
             a = CargarAlumno();
             if(Member(als, a.ci))
-                Insert(als, a);
-            else
                 ErrorExisteAlumno();
+            else
+            {
+                Insert(als, a);
+                printf("\nEl alumno fue cargado con exito\n");
+            }
             break;
         case 4:
-            printf("Selecciono registrar curso en escolaridad");
+            printf("\nSelecciono registrar curso en escolaridad\n");
             //GP
             printf("\ningrese la CI del alumno al que desea cargar el curso... ");
             scanf("%d",&ci);
@@ -98,7 +101,7 @@ int main() {
             }
             break;
         case 5:
-            printf("Selecciono listar asignaturas");
+            printf("\nSelecciono listar asignaturas\n");
             if(esVacia(asigns) == true)
                 printf("Las asignaturas estan vacias\n");
             else
@@ -111,7 +114,7 @@ int main() {
             topeActual = TopeActualAsignaturas(asigns);
             int resultado[MAX_ASIG]; // Arreglo auxiliar para guardar las previas
             int topeResultado = 0;
-            IngresarNroAsignatura(nroAsig); // Solo permite avanzar si logra insertar nros validos
+            IngresarNroAsignatura(asigns, nroAsig); // Solo permite avanzar si logra insertar nros validos
             ListarTodasLasPrevias(curricula, nroAsig, topeActual, resultado, topeResultado);
             for(int i=0; i< topeResultado; i++){
                 printf("\nNro: &d - Asignatura: %d", resultado[i]);
@@ -121,8 +124,8 @@ int main() {
             break;
         }
         case 7:
-            printf("Selecciono listar alumno por cédula");//Gus
-            printf("\ningrese la CI del alumno al que desea cargar el curso... ");
+            printf("\nSelecciono listar alumno por cédula\n");//Gus
+            printf("\ningrese la CI del alumno al que desea listar... ");
             scanf("%d",&ci);
             if (!Member(als, ci))
                 ErrorNoExisteAlumno();
@@ -133,9 +136,16 @@ int main() {
                 printf("\n");
             }
             break;
-        case 8:
-            printf("Selecciono listar escolaridad alumno");
-            //GP
+        case 8: //GP
+            printf("\nSelecciono listar escolaridad alumno\n");
+            printf("\nIngrese la CI del alumno a listar la escolaridad...");
+            scanf("%d",ci);
+            if(!Member(als, ci))
+                ErrorNoExisteAlumno();
+            else if(EsVaciaEscolaridad(DarEscolaridad(Find(als, ci))))
+                ErrorEscolaridadVacia();
+            else
+                DesplegarEscolaridad(DarEscolaridad(Find(als, ci)));
             break;
         case 9:
             break;

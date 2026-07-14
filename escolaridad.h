@@ -51,5 +51,7 @@ bool ExisteEnEscolaridad(Escolaridad e, int nasig);
 
 Curso DarUltimoEscolaridad(Escolaridad e);
 
+void DesplegarEscolaridad(Escolaridad e);
+
 
 #endif// ESCOLARIDAD_H_INCLUDED

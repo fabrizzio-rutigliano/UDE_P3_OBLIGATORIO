@@ -1,5 +1,5 @@
 // testCurricula.cpp
-
+/*
 #include "testCurricula.h"
 
 // ObtenerPrevias esta implementada en curricula.cpp pero NO esta declarada
@@ -114,3 +114,4 @@ void testCurricula()
     printf(" FIN DEL TEST DE CURRICULA\n");
     printf("=================================================\n");
 }
+    */

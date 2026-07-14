@@ -6,13 +6,13 @@
 //Muestra el menu principal
 void desplegarMenuPrincipal(int &opcion);
 
-void IngresarPreviatura(int prev, int requiere);
+void IngresarPreviatura(Asignaturas asigns, int prev, int requiere);
 
-void AsignaturaInvalida(int asig);
+void AsignaturaInvalida(Asignatura asigns, int asig);
 
 void ErrorGeneraCiclo();
 
-void IngresarNroAsignatura(int asig);
+void IngresarNroAsignatura(Asignaturas asigns, int asig);
 
 void ErrorExisteAlumno();
 
@@ -21,5 +21,7 @@ void ErrorCursoYaExiste();
 void ErrorFechaCursoAnteriorAlUltimo();
 
 void ErrorNoExisteAlumno();
+
+void ErrorEscolaridadVacia();
 
 #endif// MENU_H_INCLUDED

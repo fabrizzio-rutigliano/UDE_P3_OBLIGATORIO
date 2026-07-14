@@ -121,3 +121,17 @@ Curso DarUltimoEscolaridad(Escolaridad e)
 {
     return e.ult->info;
 }
+
+
+void DesplegarEscolaridad(Escolaridad e)
+{
+    nodoCurso *aux = new nodoCurso;
+    aux = e.prim;
+    while(aux != NULL)
+    {
+        DesplegarNumero(aux->info);
+        DesplegarFechaFin(aux->info);
+        DesplegarCalificacion(aux->info);
+        aux = aux->sig;
+    }
+}

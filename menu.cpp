@@ -18,37 +18,40 @@ void desplegarMenuPrincipal(int &opcion){
 }
 
 // Auxiliares para requerimiento 2
-void IngresarPreviatura(int prev, int requiere){
+
+void AsignaturaInvalida(Asignaturas asigns, int asig){
+    if (!ExisteAsignatura(asigns, asig))
+        printf("Error: Asignatura ingresada no es valida...");
+}
+
+void IngresarPreviatura(Asignaturas asigns, int prev, int requiere){
     
     do{
         printf("\nIngrese el nro de la asignatura previa: \n");
         scanf("%d", &prev);
-        AsignaturaInvalida(prev);
-    }while(ExisteAsignatura(prev) == false);
+        AsignaturaInvalida(asigns, prev);
+    }while(ExisteAsignatura(asigns, prev) == false);
 
     do{
     printf("\nIngrese el nro de la asignatura de la que es previa: \n");
     scanf("%d", &requiere);
-    }while(ExisteAsignatura(prev) == false);
+    }while(ExisteAsignatura(asigns, prev) == false);
 }
 
-void AsignaturaInvalida(int asig){
-    if (!ExisteAsignatura(asig))
-        printf("Error: Asignatura ingresada no es valida...");
-}
+
 
 void ErrorGeneraCiclo(){
     printf("Error: La asignatura previa genera un ciclo....");
 }
 
 // Auxiliares para requerimiento 6
-void IngresarNroAsignatura(int asig){
+void IngresarNroAsignatura(Asignaturas asigns,int asig){
     do{
         printf("\nIngrese el nro de la asignatura: \n");
         scanf("%d", &asig);
-        AsignaturaInvalida(asig);
+        AsignaturaInvalida(asigns, asig);
     }
-    while(ExisteAsignatura(asig) == false);
+    while(ExisteAsignatura(asigns, asig) == false);
 }
 
 
@@ -70,4 +73,9 @@ void ErrorFechaCursoAnteriorAlUltimo()
 void ErrorNoExisteAlumno()
 {
     printf("\nERROR: El alumno no existe...\n");
+}
+
+void ErrorEscolaridadVacia()
+{
+    printf("\nLa escolaridad es vacia...\n");
 }

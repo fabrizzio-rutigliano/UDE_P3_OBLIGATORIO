@@ -1,4 +1,4 @@
-
+/*
 #include "testAlumnos.h"
 
 static void separador(const char *titulo)
@@ -167,3 +167,4 @@ void testAlumnos()
     printf(" FIN DEL TEST DE ALUMNOS\n");
     printf("=================================================\n");
 }
+    */

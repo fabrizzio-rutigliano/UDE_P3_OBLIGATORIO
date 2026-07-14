@@ -6,17 +6,18 @@
 Alumno CargarAlumno()
 {
     Alumno a;
-    int ci; 
-    String nom, ap, tel; 
-    Escolaridad escolaridad;
+    printf("\nIngrese la Cedula del alumno(con digito verificador, sin puntos ni guiones)... ");
+    scanf("%d", &a.ci);
     strCrear(a.nombre);
-    strCop(a.nombre, nom);
+    printf("\nIngrese el nombre del alumno... ");
+    strScan(a.nombre);
     strCrear(a.apellido);
-    strCop(a.apellido, ap);
+    printf("\nIngrese el apellido del alumno... ");
+    strScan(a.apellido);
     strCrear(a.telefono);
-    strCop(a.telefono, tel);
+    printf("\nIngrese el telefono del alumno... ");
+    strScan(a.telefono);
     CrearEscolaridad(a.escolaridad);
-
     return a;
 }
 
@@ -68,19 +69,20 @@ void InsertarEscolaridadAlu(Alumno &al, Curso cur)
 //desplegar alumno
 void DesplegarAlumno(Alumno al){
     printf("\nNombre: ");
-    String nombreAlumno;
-    DarNombre(al, nombreAlumno);
-    strPrint(nombreAlumno);
+    String strTemp;
+    strCrear(strTemp);
+    DarNombre(al, strTemp);
+    strPrint(strTemp);
 
     printf("\nApellido: ");
-    String apellidoAlumno;
-    DarApellido(al, apellidoAlumno);
-    strPrint(apellidoAlumno);
+    DarApellido(al, strTemp);
+    strPrint(strTemp);
 
     printf("\nTeléfono: ");
-    String telefonoAlumno;
-    DarTelefono(al, telefonoAlumno);
-    strPrint(telefonoAlumno);
+    DarTelefono(al, strTemp);
+    strPrint(strTemp);
+
+    strDestruir(strTemp);
 
     Escolaridad escolaridad;
     escolaridad = DarEscolaridad(al);
