@@ -139,7 +139,7 @@ int main() {
         case 8: //GP
             printf("\nSelecciono listar escolaridad alumno\n");
             printf("\nIngrese la CI del alumno a listar la escolaridad...");
-            scanf("%d",ci);
+            scanf("%d",&ci);
             if(!Member(als, ci))
                 ErrorNoExisteAlumno();
             else if(EsVaciaEscolaridad(DarEscolaridad(Find(als, ci))))
