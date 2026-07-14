@@ -63,10 +63,9 @@ void DesplegarAsignatura(Asignatura a, int num){
 
     printf("\nNúmero: %d", num);
     printf("\nNombre: ");
-    String nombreAsignatura;
-    DarNombre(a, nombreAsignatura);
-    strPrint(nombreAsignatura);
-
+    
+    DesplegarNombre(a);
+    
     printf("\nCantidad de horas: %d", DarCantidadHoras(a));
     if(DarOptativa(a))
         printf("\n Optativa: SI");
