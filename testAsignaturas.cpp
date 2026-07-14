@@ -37,13 +37,12 @@ void testInsBack(){
     strCrear(nom);
     strCop(nom, (String)"Programacion 3");
 
-    Asignatura asig = cargarAsignatura(301, nom, 96, false);
+    Asignatura asig = cargarAsignatura(nom, 96, false);
 
     InsBack(asig, asigns);
 
     if (!esVacia(asigns) &&
-        asigns.tope == 1 &&
-        DarNumero(asigns.arre[0]) == 301)
+        asigns.tope == 1)
     {
         printf("OK\n");
     }
@@ -66,7 +65,7 @@ void testDestruirAsignaturas(){
     strCrear(nom);
     strCop(nom, (String)"Base de Datos");
 
-    Asignatura asig = cargarAsignatura(210, nom, 80, false);
+    Asignatura asig = cargarAsignatura(nom, 80, false);
 
     InsBack(asig, asigns);
 
