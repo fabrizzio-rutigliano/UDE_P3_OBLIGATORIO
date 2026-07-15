@@ -1,29 +1,8 @@
 #include "menu.h"
-//#include "testEscolaridad.h"
-//#include "testAsignatura.h"
-//#include "testAsignaturas.h"
-//#include "testAlumno.h"
-//#include "testAlumnos.h"
-//#include "testCurricula.h"
-
-/*
-
-Fecha String arreglar boolean, y limpiar no utilizables (Gus)9 Done!
-
-Alumno  GP
-Alumnos GP
-Asignatura Gus Done!
-Asignaturas Gus Done!
-Curricula Fabri
-Constantes GP
-Menu Gus
-
-Crear alumno -> Crear de escolaridad
-*/
 
 int main() {
 
-    int opcion, ci, topeActual;
+    int opcion, ci, topeActual, nroAsig;
     Asignaturas asigns;
     Alumnos als;
     Alumno a;
@@ -37,23 +16,20 @@ int main() {
 
     //Inicializar matriz de adyacencia para curricula
     Crear(curricula);
-    
-    //testEscolaridad();
-    //testEscolaridad();
-    //testAlumno();
-    //testAlumnos();
-    //ejecutarTestAsignatura();
-    //ejecutarTestAsignaturas();
 
     do
     {
         topeActual = 0;
+        nroAsig = 0;
         desplegarMenuPrincipal(opcion);
         switch (opcion)
         {
         case 1:
             printf("\nSelecciono registrar nueva asignatura\n");
-            AgregarAsignaturaEnAsignaturas(asigns);
+            if(TopeActualAsignaturas(asigns) == MAX_ASIG)
+                ErrorAsignaturasMaximas();
+            else
+                AgregarAsignaturaEnAsignaturas(asigns);
             break;
         case 2:{
             printf("\nSelecciono agregar previatura\n");
@@ -68,7 +44,6 @@ int main() {
         }
         case 3:
             printf("\nSelecciono inscribir nuevo alumno\n");
-            //GP en curso
             a = CargarAlumno();
             if(Member(als, a.ci))
                 ErrorExisteAlumno();
@@ -80,7 +55,6 @@ int main() {
             break;
         case 4:
             printf("\nSelecciono registrar curso en escolaridad\n");
-            //GP
             printf("\ningrese la CI del alumno al que desea cargar el curso... ");
             scanf("%d",&ci);
             if (!Member(als, ci))
@@ -109,15 +83,13 @@ int main() {
             break;
         case 6: {
             printf("\nSelecciono listar previaturas\n");
-            // Fabri
-            int nroAsig = 0;
             topeActual = TopeActualAsignaturas(asigns);
             int resultado[MAX_ASIG]; // Arreglo auxiliar para guardar las previas
             int topeResultado = 0;
             IngresarNroAsignatura(asigns, nroAsig); // Solo permite avanzar si logra insertar nros validos
             ListarTodasLasPrevias(curricula, nroAsig, topeActual, resultado, topeResultado);
             for(int i=0; i< topeResultado; i++){
-                printf("\nNro: &d - Asignatura: %d", resultado[i]);
+                printf("\nNro: %d - Asignatura: ", resultado[i]);
                 DesplegarNombre(asigns.arre[resultado[i]]);
                 printf("\n");
             }
@@ -136,7 +108,7 @@ int main() {
                 printf("\n");
             }
             break;
-        case 8: //GP
+        case 8:
             printf("\nSelecciono listar escolaridad alumno\n");
             printf("\nIngrese la CI del alumno a listar la escolaridad...");
             scanf("%d",&ci);
@@ -160,9 +132,5 @@ int main() {
     destruirAsignaturas(asigns);
 
     //destruir alumnos
-
-
-   
-
     return 0;
 }

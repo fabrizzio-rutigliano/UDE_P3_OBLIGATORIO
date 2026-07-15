@@ -129,8 +129,11 @@ void DesplegarEscolaridad(Escolaridad e)
     aux = e.prim;
     while(aux != NULL)
     {
+        printf("\nEl numero de asignatura es... ");
         DesplegarNumero(aux->info);
+        printf("\nLa fecha de fin de asignatura es... ");
         DesplegarFechaFin(aux->info);
+        printf("\nLa calificacion de la asignatura es... ");
         DesplegarCalificacion(aux->info);
         aux = aux->sig;
     }

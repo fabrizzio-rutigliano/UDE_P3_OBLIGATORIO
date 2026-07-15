@@ -56,7 +56,7 @@ int TopeActualAsignaturas(Asignaturas asigns){
 
 // Retorna si la asignatura existe 
 bool ExisteAsignatura(Asignaturas asigns, int asig){
-    if (asig < asigns.tope)
+    if (asig >= 0 && asig < asigns.tope)
         return true;
     else 
         return false;

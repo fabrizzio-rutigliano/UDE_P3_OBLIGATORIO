@@ -44,7 +44,7 @@ int CursosAprobadosEscolaridad(Escolaridad e);
 
 // Devuelve el elemento que ocupa la posición K de la secuencia.
 // Precondición: El largo de la secuencia es mayor o igual a K. 
-Curso Kesimo(Escolaridad e, int k);
+Curso KesimoEscolaridad(Escolaridad e, int k);
 
 //determina el elemento existe en la secuencia.
 bool ExisteEnEscolaridad(Escolaridad e, int nasig);
