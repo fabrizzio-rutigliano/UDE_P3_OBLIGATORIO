@@ -26,4 +26,6 @@ void ErrorEscolaridadVacia();
 
 void ErrorAsignaturasMaximas();
 
+void ErrorPrevias();
+
 #endif// MENU_H_INCLUDED

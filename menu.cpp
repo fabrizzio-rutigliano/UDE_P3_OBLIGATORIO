@@ -38,7 +38,6 @@ void IngresarPreviatura(Asignaturas asigns, int &prev, int &requiere){
     }while(ExisteAsignatura(asigns, requiere) == false);
 }
 
-
 // Auxiliares para requerimiento 6
 void IngresarNroAsignatura(Asignaturas asigns, int &nroAsig){
     do{
@@ -48,11 +47,9 @@ void IngresarNroAsignatura(Asignaturas asigns, int &nroAsig){
     }while(!ExisteAsignatura(asigns, nroAsig));
 }
 
-
 void ErrorGeneraCiclo(){
     printf("Error: La asignatura previa genera un ciclo....");
 }
-
 
 
 void ErrorExisteAlumno()
@@ -83,4 +80,9 @@ void ErrorEscolaridadVacia()
 void ErrorAsignaturasMaximas()
 {
     printf("\nSe alcanzo el numero maximo de asignaturas...\n");
+}
+
+void ErrorPrevias()
+{
+    printf("\nNo cumple con las previaturas...\n");
 }

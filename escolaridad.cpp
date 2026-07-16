@@ -117,6 +117,21 @@ bool ExisteEnEscolaridad(Escolaridad e, int nasig)
     return existe;
 }
 
+bool ExisteAprobadoEnEscolaridad(Escolaridad e, int nasig)
+{
+    bool existe = false;
+    nodoCurso *aux = new nodoCurso;
+    aux = e.prim;
+    while(aux != NULL && !existe)
+    {
+        if(aux->info.numero == nasig && CursoAprobado(aux->info))
+            existe = true;
+        else
+            aux = aux->sig;
+    }
+    return existe;
+}
+
 Curso DarUltimoEscolaridad(Escolaridad e)
 {
     return e.ult->info;

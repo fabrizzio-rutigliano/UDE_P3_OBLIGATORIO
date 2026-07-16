@@ -2,12 +2,13 @@
 
 int main() {
 
-    int opcion, ci, topeActual, nroAsig;
+    int opcion, ci, topeActual, nroAsig, j;
     Asignaturas asigns;
     Alumnos als;
     Alumno a;
     Curso cur;
     Curricula curricula;
+    bool PreviasAprobadas;
 
     Crear(asigns);
    
@@ -61,13 +62,22 @@ int main() {
                 ErrorNoExisteAlumno();
             else
             {
+                PreviasAprobadas = true;
                 a = Find(als, ci);
                 IngresarNroAsignatura(asigns, nroAsig);
                 IngresarCurso(cur, nroAsig);
-                if (ExisteEnEscolaridad(DarEscolaridad(a), cur.numero))
+                topeActual = TopeActualAsignaturas(asigns);
+                for (j = 0; j < topeActual && PreviasAprobadas; j++)
+                {
+                    if (PerteneceArista(curricula, j, cur.numero) && !ExisteAprobadoEnEscolaridad(DarEscolaridad(a), j))
+                        PreviasAprobadas = false;
+                }
+                if (ExisteAprobadoEnEscolaridad(DarEscolaridad(a), cur.numero))
                     ErrorCursoYaExiste();
-                else if (!EsVaciaEscolaridad(DarEscolaridad(a)) && !esMayorFechas(cur.fechaFin, DevolverFechaFin(DarUltimoEscolaridad(DarEscolaridad(a)))))
+                else if (!EsVaciaEscolaridad(DarEscolaridad(a)) && esMayorFechas(DevolverFechaFin(DarUltimoEscolaridad(DarEscolaridad(a))), cur.fechaFin))
                     ErrorFechaCursoAnteriorAlUltimo();
+                else if(!PreviasAprobadas)
+                    ErrorPrevias();
                 else
                 {
                     InsBackEscolaridad(a.escolaridad, cur);

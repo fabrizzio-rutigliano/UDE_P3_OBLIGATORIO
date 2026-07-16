@@ -50,6 +50,9 @@ Curso KesimoEscolaridad(Escolaridad e, int k);
 //determina el elemento existe en la secuencia.
 bool ExisteEnEscolaridad(Escolaridad e, int nasig);
 
+//determina el elemento existe y esta aprobado en la secuencia.
+bool ExisteAprobadoEnEscolaridad(Escolaridad e, int nasig);
+
 Curso DarUltimoEscolaridad(Escolaridad e);
 
 void DesplegarEscolaridad(Escolaridad e, Asignaturas asigns);
