@@ -41,10 +41,9 @@ Curso CargarCurso(int nro, Fecha ffin, int cal)
     return c;
 }
 
-void IngresarCurso(Curso &c)
+void IngresarCurso(Curso &c, int nroAsig)
 {
-    printf("\nIngrese el numero de curso...");
-    scanf("%d",&c.numero);
+    c.numero = nroAsig;
     printf("\nIngrese la fecha de finalizacion del curso...");
     cargarFecha(c.fechaFin);
     printf("\nIngrese la calificacion...");

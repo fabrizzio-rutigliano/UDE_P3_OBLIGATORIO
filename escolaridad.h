@@ -2,6 +2,7 @@
 #define ESCOLARIDAD_H_INCLUDED
 
 #include "curso.h"
+#include "asignaturas.h"
 
 typedef struct nodoCurso {
             	            Curso info;
@@ -51,7 +52,7 @@ bool ExisteEnEscolaridad(Escolaridad e, int nasig);
 
 Curso DarUltimoEscolaridad(Escolaridad e);
 
-void DesplegarEscolaridad(Escolaridad e);
+void DesplegarEscolaridad(Escolaridad e, Asignaturas asigns);
 
 
 #endif// ESCOLARIDAD_H_INCLUDED

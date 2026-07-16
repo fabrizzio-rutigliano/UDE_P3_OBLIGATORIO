@@ -123,16 +123,25 @@ Curso DarUltimoEscolaridad(Escolaridad e)
 }
 
 
-void DesplegarEscolaridad(Escolaridad e)
+void DesplegarEscolaridad(Escolaridad e, Asignaturas asigns)
 {
+    String nom;
+    strCrear(nom);
     nodoCurso *aux = new nodoCurso;
     aux = e.prim;
     while(aux != NULL)
     {
         printf("\nEl numero de asignatura es... ");
         DesplegarNumero(aux->info);
+        printf("\nEl nombre de la asignatura es... ");
+        DarNombre(DarAsignatura(asigns, DevolverNumero(aux->info)), nom);
+        strPrint(nom);
         printf("\nLa fecha de fin de asignatura es... ");
         DesplegarFechaFin(aux->info);
+        if(CursoAprobado(aux->info))
+            printf("\nEl curso esta aprobado... ");
+        else
+            printf("\nEl curso no esta aprobado... ");
         printf("\nLa calificacion de la asignatura es... ");
         DesplegarCalificacion(aux->info);
         aux = aux->sig;

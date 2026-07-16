@@ -62,7 +62,8 @@ int main() {
             else
             {
                 a = Find(als, ci);
-                IngresarCurso(cur);
+                IngresarNroAsignatura(nroAsig);
+                IngresarCurso(cur, nroAsig);
                 if (ExisteEnEscolaridad(DarEscolaridad(a), cur.numero))
                     ErrorCursoYaExiste();
                 else if (!EsVaciaEscolaridad(DarEscolaridad(a)) && !esMayorFechas(cur.fechaFin, DevolverFechaFin(DarUltimoEscolaridad(DarEscolaridad(a)))))
@@ -117,7 +118,7 @@ int main() {
             else if(EsVaciaEscolaridad(DarEscolaridad(Find(als, ci))))
                 ErrorEscolaridadVacia();
             else
-                DesplegarEscolaridad(DarEscolaridad(Find(als, ci)));
+                DesplegarEscolaridad(DarEscolaridad(Find(als, ci)), asigns);
             break;
         case 9:
             break;

@@ -61,3 +61,8 @@ bool ExisteAsignatura(Asignaturas asigns, int asig){
     else 
         return false;
 };
+
+Asignatura DarAsignatura(Asignaturas asigns, int num)
+{
+    return asigns.arre[num];
+}

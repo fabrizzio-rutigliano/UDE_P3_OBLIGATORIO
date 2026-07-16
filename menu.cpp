@@ -38,6 +38,13 @@ void IngresarPreviatura(Asignaturas asigns, int &prev, int &requiere){
     }while(ExisteAsignatura(asigns, requiere) == false);
 }
 
+void IngresarNroAsignatura(Asignaturas asigns, int &nroAsig){
+    do{
+        printf("\nIngrese el nro de la asignatura del curso realizado: \n");
+        scanf("%d", &nroAsig);
+        AsignaturaInvalida(asigns, &nroAsig);
+    }while(!ExisteAsignatura(asigns, asig))
+}
 
 
 void ErrorGeneraCiclo(){

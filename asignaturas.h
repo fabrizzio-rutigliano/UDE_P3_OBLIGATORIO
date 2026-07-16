@@ -33,4 +33,6 @@ int TopeActualAsignaturas(Asignaturas asigns);
 // Retorna si la asignatura existe 
 bool ExisteAsignatura(Asignaturas asigns, int asig);
 
+Asignatura DarAsignatura(Asignaturas asigns, int num);
+
 #endif// ASIGNATURAS_H_INCLUDED
