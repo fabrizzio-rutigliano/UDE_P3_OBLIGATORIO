@@ -10,8 +10,6 @@ void IngresarPreviatura(Asignaturas asigns, int &prev, int &requiere);
 
 void AsignaturaInvalida(Asignaturas asigns, int &asig);
 
-void IngresarNroAsignatura(int &nroAsig)
-
 void ErrorGeneraCiclo();
 
 void IngresarNroAsignatura(Asignaturas asigns, int &asig);

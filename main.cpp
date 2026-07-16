@@ -62,7 +62,7 @@ int main() {
             else
             {
                 a = Find(als, ci);
-                IngresarNroAsignatura(nroAsig);
+                IngresarNroAsignatura(asigns, nroAsig);
                 IngresarCurso(cur, nroAsig);
                 if (ExisteEnEscolaridad(DarEscolaridad(a), cur.numero))
                     ErrorCursoYaExiste();

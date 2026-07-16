@@ -38,12 +38,14 @@ void IngresarPreviatura(Asignaturas asigns, int &prev, int &requiere){
     }while(ExisteAsignatura(asigns, requiere) == false);
 }
 
+
+// Auxiliares para requerimiento 6
 void IngresarNroAsignatura(Asignaturas asigns, int &nroAsig){
     do{
         printf("\nIngrese el nro de la asignatura del curso realizado: \n");
         scanf("%d", &nroAsig);
-        AsignaturaInvalida(asigns, &nroAsig);
-    }while(!ExisteAsignatura(asigns, asig))
+        AsignaturaInvalida(asigns, nroAsig);
+    }while(!ExisteAsignatura(asigns, nroAsig));
 }
 
 
@@ -51,15 +53,6 @@ void ErrorGeneraCiclo(){
     printf("Error: La asignatura previa genera un ciclo....");
 }
 
-// Auxiliares para requerimiento 6
-void IngresarNroAsignatura(Asignaturas asigns,int &asig){
-    do{
-        printf("\nIngrese el nro de la asignatura: \n");
-        scanf("%d", &asig);
-        AsignaturaInvalida(asigns, asig);
-    }
-    while(ExisteAsignatura(asigns, asig) == false);
-}
 
 
 void ErrorExisteAlumno()
