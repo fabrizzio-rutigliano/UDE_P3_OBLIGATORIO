@@ -38,6 +38,7 @@ void InsertarEscolaridadAlu(Alumno &al, Curso cur);
 //desplegar alumno
 void DesplegarAlumno(Alumno al);
 
-//TODO hay que destruir alumno
+//Libera la memoria utilizada por un alumno
+void DestruirAlumno(Alumno &al);
 
 #endif// ALUMNO_H_INCLUDED

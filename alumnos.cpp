@@ -106,3 +106,17 @@ void Delete(Alumnos &as, int ci)
         ant->sig = aux->sig;
     delete(aux);
 }
+
+void DestruirAlumnos(Alumnos &alus){
+    for (int i = 0; i < MAX_ALU; i++) {
+        ListaAlumnos aux = alus[i];
+        while (aux != NULL) {
+            ListaAlumnos aBorrar = aux;
+            aux = aux -> sig;
+
+            DestruirAlumno(aBorrar->info);
+            delete aBorrar;
+        }
+        alus[i] = NULL;
+    }
+}

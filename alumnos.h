@@ -45,4 +45,7 @@ void Modify(Alumnos &as, Alumno al);
 //Precondición: el elemento es miembro del diccionario.
 void Delete(Alumnos &as, int ci);
 
+
+//Libera los nodos de memoria de la listas del arreglo.
+void DestruirAlumnos(Alumnos &alus);
 #endif// ALUMNOS_H_INCLUDED

@@ -37,28 +37,16 @@ void listarAsignaturas(Asignaturas asings){
     }
 }
 
-//agrega nueva asignatura despues de hacer los controles necesarios
-void AgregarAsignaturaEnAsignaturas(Asignaturas &asigns){
-    if(asigns.tope < 30)
-    {
-        int num = asigns.tope;
-        asigns.tope++;
-        IngresarAsignatura(asigns.arre[num]);
-    }
-    else
-        printf("\nError"); //desplegar mensaje de error
-}
-
 // Retornar el tope de asignatura
 int TopeActualAsignaturas(Asignaturas asigns){
     return asigns.tope;
 }
 
-// Retorna si la asignatura existe 
+// Retorna si la asignatura existe
 bool ExisteAsignatura(Asignaturas asigns, int asig){
     if (asig >= 0 && asig < asigns.tope)
         return true;
-    else 
+    else
         return false;
 };
 

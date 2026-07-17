@@ -90,3 +90,10 @@ void DesplegarAlumno(Alumno al){
     printf("\nCantidad total de cursos: %d", LargoEscolaridad(escolaridad));
     printf("\nCantidad de cursos aprobados: %d", CursosAprobadosEscolaridad(escolaridad));
 }
+
+// Libera la memoria utilizada por una Asignatura
+void DestruirAlumno(Alumno &al){
+    strDestruir(al.nombre);
+    strDestruir(al.apellido);
+    strDestruir(al.telefono);
+}

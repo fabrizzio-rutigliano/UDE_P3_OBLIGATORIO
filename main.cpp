@@ -4,6 +4,7 @@ int main() {
 
     int opcion, ci, topeActual, nroAsig, j;
     Asignaturas asigns;
+    Asignatura asig;
     Alumnos als;
     Alumno a;
     Curso cur;
@@ -11,7 +12,7 @@ int main() {
     bool PreviasAprobadas;
 
     Crear(asigns);
-   
+
     //crear alumnos
     Make(als);
 
@@ -27,14 +28,15 @@ int main() {
         {
         case 1:
             printf("\nSelecciono registrar nueva asignatura\n");
-            if(TopeActualAsignaturas(asigns) == MAX_ASIG)
+            if(TopeActualAsignaturas(asigns) == MAX_ASIG){
                 ErrorAsignaturasMaximas();
-            else
-                AgregarAsignaturaEnAsignaturas(asigns);
+            }else{
+                IngresarAsignatura(asig);
+                InsBack(asig, asigns);}
             break;
         case 2:{
             printf("\nSelecciono agregar previatura\n");
-                int prev = 0; 
+                int prev = 0;
                 int requiere = 0;
                 topeActual = TopeActualAsignaturas(asigns);
                 IngresarPreviatura(asigns, prev, requiere); // Solo permite avanzar si logra insertar nros validos
@@ -143,5 +145,6 @@ int main() {
     destruirAsignaturas(asigns);
 
     //destruir alumnos
+    DestruirAlumnos(als);
     return 0;
 }

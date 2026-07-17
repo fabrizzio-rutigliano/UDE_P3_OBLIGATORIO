@@ -4,7 +4,7 @@
 #include "constantes.h"
 #include "asignatura.h"
 
-typedef struct Asignaturas {         
+typedef struct Asignaturas {
         Asignatura arre[MAX_ASIG];
         int tope;
    } Asignaturas;
@@ -24,13 +24,10 @@ void destruirAsignaturas(Asignaturas &asigns);
 //lista todas las asignaturas
 void listarAsignaturas(Asignaturas asings);
 
-//agrega nueva asignatura despues de hacer los controles necesarios
-void AgregarAsignaturaEnAsignaturas(Asignaturas &asigns);
-
 // Retornar el tope de asignatura
 int TopeActualAsignaturas(Asignaturas asigns);
 
-// Retorna si la asignatura existe 
+// Retorna si la asignatura existe
 bool ExisteAsignatura(Asignaturas asigns, int asig);
 
 Asignatura DarAsignatura(Asignaturas asigns, int num);
