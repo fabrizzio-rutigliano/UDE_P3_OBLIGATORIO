@@ -36,15 +36,4 @@ bool sonIgualesFechas(Fecha a, Fecha b);
 // Copia una fecha en otra fecha
 void copFecha(Fecha &fec1, Fecha fec2);
 
-
-// ---------- ARCHIVO STRUCT FECHA --------------
-
-// Escribe en el archivo los datos de fecha.
-// Precondici�n: El archivo viene abierto para escritura.
-void Bajar_Fecha(Fecha fec, FILE * f );
-
-// Lee desde el archivo los datos de la fecha.
-// Precondici�n: El archivo viene abierto para lectura.
-void Levantar_Fecha(Fecha &fec, FILE * f );
-
 #endif // FECHA_H_INCLUDED

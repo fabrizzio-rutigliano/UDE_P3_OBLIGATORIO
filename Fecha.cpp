@@ -116,23 +116,3 @@ void copFecha(Fecha &fec1, Fecha fec2)
     fec1.mes = darMes(fec2);
     fec1.anio = darAnio(fec2);
 }
-
-// ---------- AB STRUCT ------------
-
-// ---------- ARCHIVO STRUCT FECHA --------------
-
-// Escribe en el archivo los datos de fecha.
-// Precondición: El archivo viene abierto para escritura.
-void Bajar_Fecha(Fecha fec, FILE * f ){
-    fwrite(&fec.dia, sizeof(int), 1, f);
-    fwrite(&fec.mes, sizeof(int), 1, f);
-    fwrite(&fec.anio, sizeof(int), 1, f);
-}
-
-// Lee desde el archivo los datos de la fecha.
-// Precondición: El archivo viene abierto para lectura.
-void Levantar_Fecha(Fecha &fec, FILE * f ){
-    fread(&fec.dia, sizeof(int), 1, f);
-    fread(&fec.mes, sizeof(int), 1, f);
-    fread(&fec.anio, sizeof(int), 1, f);
-}
