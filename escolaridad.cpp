@@ -62,8 +62,7 @@ void RestoEscolaridad(Escolaridad inicial, Escolaridad &final)
 int LargoEscolaridad(Escolaridad e)
 {
     int i=0;
-    nodoCurso *aux = new nodoCurso;
-    aux = e.prim;
+    nodoCurso *aux = e.prim;
     while(aux != NULL)
     {
         aux = aux->sig;
@@ -75,8 +74,7 @@ int LargoEscolaridad(Escolaridad e)
 // Devuelve el numero de cursos aprobados
 int CursosAprobadosEscolaridad(Escolaridad e){
     int i=0;
-    nodoCurso *aux = new nodoCurso;
-    aux = e.prim;
+    nodoCurso *aux = e.prim;
     while(aux != NULL)
     {
         Curso c = aux->info;
@@ -92,8 +90,7 @@ int CursosAprobadosEscolaridad(Escolaridad e){
 Curso KesimoEscolaridad(Escolaridad e, int k)
 {
     int i;
-    nodoCurso *aux = new nodoCurso;
-    aux = e.prim;
+    nodoCurso *aux = e.prim;
     for(i=1; i<k; i++)
     {
         aux = aux->sig;
@@ -105,8 +102,7 @@ Curso KesimoEscolaridad(Escolaridad e, int k)
 bool ExisteEnEscolaridad(Escolaridad e, int nasig)
 {
     bool existe = false;
-    nodoCurso *aux = new nodoCurso;
-    aux = e.prim;
+    nodoCurso *aux = e.prim;
     while(aux != NULL && !existe)
     {
         if(aux->info.numero == nasig)
@@ -120,8 +116,7 @@ bool ExisteEnEscolaridad(Escolaridad e, int nasig)
 bool ExisteAprobadoEnEscolaridad(Escolaridad e, int nasig)
 {
     bool existe = false;
-    nodoCurso *aux = new nodoCurso;
-    aux = e.prim;
+    nodoCurso *aux = e.prim;
     while(aux != NULL && !existe)
     {
         if(aux->info.numero == nasig && CursoAprobado(aux->info))
@@ -142,8 +137,7 @@ void DesplegarEscolaridad(Escolaridad e, Asignaturas asigns)
 {
     String nom;
     strCrear(nom);
-    nodoCurso *aux = new nodoCurso;
-    aux = e.prim;
+    nodoCurso *aux = e.prim;
     while(aux != NULL)
     {
         printf("\nEl numero de asignatura es... ");
@@ -161,4 +155,18 @@ void DesplegarEscolaridad(Escolaridad e, Asignaturas asigns)
         DesplegarCalificacion(aux->info);
         aux = aux->sig;
     }
+    strDestruir(nom);
+}
+
+void DestruirEscolaridad(Escolaridad &e)
+{
+    nodoCurso *aux = e.prim;
+
+    while (aux != NULL) {
+        nodoCurso * aBorrar = aux;
+        aux = aux -> sig;
+        delete aBorrar;
+    }
+    e.prim = NULL;
+    e.ult = NULL;
 }

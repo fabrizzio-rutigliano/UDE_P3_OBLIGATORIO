@@ -57,5 +57,7 @@ Curso DarUltimoEscolaridad(Escolaridad e);
 
 void DesplegarEscolaridad(Escolaridad e, Asignaturas asigns);
 
+void DestruirEscolaridad(Escolaridad &e);
+
 
 #endif// ESCOLARIDAD_H_INCLUDED

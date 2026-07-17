@@ -49,7 +49,10 @@ int main() {
             printf("\nSelecciono inscribir nuevo alumno\n");
             a = CargarAlumno();
             if(Member(als, a.ci))
+            {
                 ErrorExisteAlumno();
+                DestruirAlumno(a);
+            }
             else
             {
                 Insert(als, a);

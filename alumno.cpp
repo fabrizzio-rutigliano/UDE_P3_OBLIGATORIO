@@ -96,4 +96,5 @@ void DestruirAlumno(Alumno &al){
     strDestruir(al.nombre);
     strDestruir(al.apellido);
     strDestruir(al.telefono);
+    DestruirEscolaridad(al.escolaridad);
 }
